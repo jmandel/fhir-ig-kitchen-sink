@@ -1,0 +1,47 @@
+{
+  "resourceType": "CapabilityStatement",
+  "id": "ks-server",
+  "extension": [
+    { "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation", "valueCode": "SHALL" }
+  ],
+  "url": "http://example.org/fhir/kitchen-sink/CapabilityStatement/ks-server",
+  "name": "KitchenSinkServer", "title": "Kitchen Sink Server", "version": "0.2.0", "status": "active", "experimental": true, "date": "2026-11-20", "publisher": "The Committee for Doing It Properly",
+  "description": "The capabilities a server SHALL have to claim conformance with this guide. Imports the base server capabilities.",
+  "kind": "requirements",
+  "imports": [ "http://example.org/fhir/kitchen-sink/CapabilityStatement/ks-base-server" ],
+  "fhirVersion": "5.0.0",
+  "format": [ "json", "xml" ],
+  "implementationGuide": [ "http://example.org/fhir/kitchen-sink/ImplementationGuide/example.fhir.uv.kitchensink" ],
+  "rest": [
+    {
+      "mode": "server",
+      "documentation": "The server SHALL support the interactions below, and SHOULD support them on the same day.",
+      "security": { "cors": true, "description": "Security is described in a separate document, which is being finalised." },
+      "resource": [
+        {
+          "extension": [ { "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation", "valueCode": "SHALL" } ],
+          "type": "Patient",
+          "profile": "http://example.org/fhir/kitchen-sink/StructureDefinition/ks-minimal-patient",
+          "supportedProfile": [ "http://example.org/fhir/kitchen-sink/StructureDefinition/ks-patient" ],
+          "interaction": [
+            { "extension": [ { "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation", "valueCode": "SHALL" } ], "code": "read" },
+            { "extension": [ { "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation", "valueCode": "SHOULD" } ], "code": "search-type" },
+            { "extension": [ { "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation", "valueCode": "MAY" } ], "code": "update" }
+          ],
+          "versioning": "versioned",
+          "searchParam": [
+            { "name": "workaround-severity", "definition": "http://example.org/fhir/kitchen-sink/SearchParameter/patient-excuse-severity", "type": "number", "documentation": "Find patients by how load-bearing their workarounds are." },
+            { "name": "excuse", "definition": "http://example.org/fhir/kitchen-sink/SearchParameter/patient-excuse", "type": "token" },
+            { "name": "excuse-and-workaround-severity", "definition": "http://example.org/fhir/kitchen-sink/SearchParameter/patient-severity-excuse", "type": "composite" }
+          ],
+          "operation": [ { "name": "generate-excuse", "definition": "http://example.org/fhir/kitchen-sink/OperationDefinition/generate-excuse" } ]
+        },
+        {
+          "type": "Observation",
+          "supportedProfile": [ "http://example.org/fhir/kitchen-sink/StructureDefinition/ks-maturity-observation" ],
+          "interaction": [ { "code": "read" }, { "code": "create" } ]
+        }
+      ]
+    }
+  ]
+}

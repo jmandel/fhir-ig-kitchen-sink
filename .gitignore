@@ -1,0 +1,22 @@
+# publisher outputs and caches
+output/
+temp/
+template/
+fsh-generated/
+/input-cache/*
+!/input-cache/txcache/
+/r4/input-cache/*
+!/r4/input-cache/txcache/
+/r4/output/
+/r4/temp/
+/r4/template/
+/r4/translations/
+qa/
+# generated at build time by the test-data factory and the profile test runner
+input/factory-output/
+input/factories/log/
+input/profile-tests/*.out.json
+# local
+.DS_Store
+*.log
+/translations/

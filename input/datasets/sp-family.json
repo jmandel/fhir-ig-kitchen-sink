@@ -1,0 +1,1 @@
+{ "resourceType": "SearchParameter", "id": "respondent-family", "url": "http://example.org/fhir/kitchen-sink/SearchParameter/respondent-family", "name": "RespondentFamily", "title": "Family name", "status": "active", "description": "Family name", "code": "family", "base": [ "Patient" ], "type": "string", "expression": "Patient.name.family" }

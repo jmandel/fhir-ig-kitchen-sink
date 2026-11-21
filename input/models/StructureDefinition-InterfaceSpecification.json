@@ -1,0 +1,29 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "InterfaceSpecification",
+  "url": "http://example.org/fhir/kitchen-sink/StructureDefinition/InterfaceSpecification",
+  "version": "0.2.0",
+  "name": "InterfaceSpecification",
+  "title": "Interface Specification (logical model)",
+  "status": "active",
+  "experimental": true,
+  "date": "2026-11-20",
+  "publisher": "The Committee for Doing It Properly",
+  "description": "A logical model of an interface specification: a title and a list of conformance statements, each of which somebody once agreed to.",
+  "fhirVersion": "5.0.0",
+  "kind": "logical",
+  "abstract": false,
+  "type": "http://example.org/fhir/kitchen-sink/StructureDefinition/InterfaceSpecification",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Base",
+  "derivation": "specialization",
+  "differential": {
+    "element": [
+      { "id": "InterfaceSpecification", "path": "InterfaceSpecification", "short": "An interface specification", "definition": "An interface specification.", "min": 0, "max": "*" },
+      { "id": "InterfaceSpecification.title", "path": "InterfaceSpecification.title", "short": "Title", "definition": "The title, usually with a version number in it.", "min": 1, "max": "1", "type": [ { "code": "string" } ] },
+      { "id": "InterfaceSpecification.statement", "path": "InterfaceSpecification.statement", "short": "Conformance statement", "definition": "A conformance statement.", "min": 0, "max": "*", "type": [ { "code": "BackboneElement" } ] },
+      { "id": "InterfaceSpecification.statement.key", "path": "InterfaceSpecification.statement.key", "short": "Key", "definition": "Key of the statement.", "min": 1, "max": "1", "type": [ { "code": "id" } ] },
+      { "id": "InterfaceSpecification.statement.text", "path": "InterfaceSpecification.statement.text", "short": "Text", "definition": "Text of the statement.", "min": 1, "max": "1", "type": [ { "code": "markdown" } ] },
+      { "id": "InterfaceSpecification.statement.conformance", "path": "InterfaceSpecification.statement.conformance", "short": "SHALL | SHOULD | MAY", "definition": "The conformance verb, which implementers read in reverse order.", "min": 1, "max": "1", "type": [ { "code": "code" } ], "binding": { "strength": "required", "valueSet": "http://hl7.org/fhir/ValueSet/conformance-expectation" } }
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "resourceType": "GraphDefinition",
+  "id": "excuse-graph",
+  "url": "http://example.org/fhir/kitchen-sink/GraphDefinition/excuse-graph",
+  "name": "ExcuseGraph", "title": "Excuse Graph", "version": "0.2.0", "status": "active", "experimental": true, "date": "2026-11-20", "publisher": "The Committee for Doing It Properly",
+  "description": "The graph of resources needed to understand why a patient record looks the way it does.",
+  "start": "patient",
+  "node": [
+    { "nodeId": "patient", "description": "The patient.", "type": "Patient", "profile": "http://example.org/fhir/kitchen-sink/StructureDefinition/ks-patient" },
+    { "nodeId": "org", "description": "Whoever manages the patient.", "type": "Organization" },
+    { "nodeId": "obs", "description": "Maturity observations about the patient.", "type": "Observation", "profile": "http://example.org/fhir/kitchen-sink/StructureDefinition/ks-maturity-observation" }
+  ],
+  "link": [
+    { "sourceId": "patient", "path": "Patient.managingOrganization", "targetId": "org", "min": 0, "max": "1", "description": "The organisation responsible." },
+    { "sourceId": "patient", "targetId": "obs", "params": "subject={ref}", "min": 0, "max": "*", "description": "Observations about the patient." }
+  ]
+}

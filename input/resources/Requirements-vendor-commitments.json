@@ -1,0 +1,13 @@
+{
+  "resourceType": "Requirements",
+  "id": "vendor-commitments",
+  "url": "http://example.org/fhir/kitchen-sink/Requirements/vendor-commitments",
+  "name": "VendorCommitments", "title": "Vendor Commitments", "version": "0.2.0", "status": "active", "experimental": true, "date": "2026-11-20", "publisher": "The Committee for Doing It Properly",
+  "description": "Requirements on the vendor actor, derived from the exchange requirements, restated with the delivery dates the vendor proposed.",
+  "derivedFrom": [ "http://example.org/fhir/kitchen-sink/Requirements/exchange" ],
+  "actor": [ "http://example.org/fhir/kitchen-sink/ActorDefinition/vendor-next-quarter" ],
+  "statement": [
+    { "key": "VC-1", "label": "Standard, eventually", "conformance": [ "SHALL" ], "requirement": "The vendor SHALL implement REQ-1 in the next quarter.", "derivedFrom": "http://example.org/fhir/kitchen-sink/Requirements/exchange#REQ-1" },
+    { "key": "VC-2", "label": "Excuses, immediately", "conformance": [ "SHALL" ], "requirement": "The vendor SHALL implement REQ-3 immediately, as it is the only requirement it currently meets.", "derivedFrom": "http://example.org/fhir/kitchen-sink/Requirements/exchange#REQ-3" }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "respondents",
+  "resourceType": "Patient",
+  "source": "input/datasets/data",
+  "searches": [ "input/datasets/sp-family.json", "input/datasets/sp-given.json", "input/datasets/sp-excuse.json" ],
+  "parameters": [ "family", "excuse" ],
+  "columns": [ "family", "given", "excuse" ],
+  "detail": "respondent.html"
+}

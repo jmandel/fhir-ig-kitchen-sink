@@ -1,0 +1,90 @@
+{
+  "resourceType": "Bundle",
+  "id": "fax-cover",
+  "meta": {
+    "profile": [
+      "http://example.org/fhir/kitchen-sink/StructureDefinition/ks-fax-document"
+    ]
+  },
+  "identifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:uuid:7c1b2a90-1d1e-4c55-9a1e-000000000001"
+  },
+  "type": "document",
+  "timestamp": "2026-11-20T11:00:00Z",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:7c1b2a90-1d1e-4c55-9a1e-000000000002",
+      "resource": {
+        "resourceType": "Composition",
+        "id": "fax-cover-composition",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Fax cover document for Alice Example.</p></div>"
+        },
+        "status": "final",
+        "type": {
+          "text": "Fax cover sheet"
+        },
+        "subject": [
+          {
+            "reference": "urn:uuid:7c1b2a90-1d1e-4c55-9a1e-000000000003"
+          }
+        ],
+        "date": "2026-11-20T11:00:00Z",
+        "author": [
+          {
+            "reference": "urn:uuid:7c1b2a90-1d1e-4c55-9a1e-000000000004"
+          }
+        ],
+        "title": "Fax Cover Sheet",
+        "section": [
+          {
+            "title": "Contents",
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>One patient record, faxed. The structured version is attached for reference.</p></div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:7c1b2a90-1d1e-4c55-9a1e-000000000003"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:7c1b2a90-1d1e-4c55-9a1e-000000000003",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "fax-patient",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Alice Example, born 1970-01-01.</p></div>"
+        },
+        "name": [
+          {
+            "family": "Example",
+            "given": [
+              "Alice"
+            ]
+          }
+        ],
+        "birthDate": "1970-01-01"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:7c1b2a90-1d1e-4c55-9a1e-000000000004",
+      "resource": {
+        "resourceType": "Device",
+        "id": "fax-engine",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>The integration engine.</p></div>"
+        },
+        "displayName": "The Integration Engine That Fixes Everything"
+      }
+    }
+  ]
+}

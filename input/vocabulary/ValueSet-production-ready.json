@@ -1,0 +1,31 @@
+{
+  "resourceType": "ValueSet",
+  "id": "production-ready",
+  "url": "http://example.org/fhir/kitchen-sink/ValueSet/production-ready",
+  "version": "0.2.0",
+  "name": "ProductionReadyLevels",
+  "title": "Production-Ready Maturity Levels",
+  "status": "active",
+  "experimental": true,
+  "date": "2026-11-20",
+  "publisher": "The Committee for Doing It Properly",
+  "description": "Maturity levels that may be described as production-ready in a press release: everything that is a kind of standards-based API, plus anything digital, minus the levels that would require explanation.",
+  "compose": {
+    "include": [
+      {
+        "system": "http://example.org/fhir/kitchen-sink/CodeSystem/interop-maturity",
+        "filter": [ { "property": "concept", "op": "descendent-of", "value": "api" } ]
+      },
+      {
+        "system": "http://example.org/fhir/kitchen-sink/CodeSystem/interop-maturity",
+        "filter": [ { "property": "concept", "op": "is-a", "value": "digital" } ]
+      }
+    ],
+    "exclude": [
+      {
+        "system": "http://example.org/fhir/kitchen-sink/CodeSystem/interop-maturity",
+        "concept": [ { "code": "csv-email" } ]
+      }
+    ]
+  }
+}

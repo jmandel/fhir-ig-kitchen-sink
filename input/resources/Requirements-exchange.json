@@ -1,0 +1,14 @@
+{
+  "resourceType": "Requirements",
+  "id": "exchange",
+  "url": "http://example.org/fhir/kitchen-sink/Requirements/exchange",
+  "name": "ExchangeRequirements", "title": "Requirements for Exchanging Health Data The Right Way", "version": "0.2.0", "status": "active", "experimental": true, "date": "2026-11-20", "publisher": "The Committee for Doing It Properly",
+  "description": "The normative requirements of this guide. Each is a SHALL; several have footnotes.",
+  "actor": [ "http://example.org/fhir/kitchen-sink/ActorDefinition/vendor-next-quarter", "http://example.org/fhir/kitchen-sink/ActorDefinition/conformant-client" ],
+  "statement": [
+    { "key": "REQ-1", "label": "Use the standard", "conformance": [ "SHALL" ], "requirement": "Systems SHALL exchange data using the standard.\n\n*Footnote: 'the standard' means the version of the standard current at the time of contract signature, not this one.*", "satisfiedBy": [ "http://example.org/fhir/kitchen-sink/CapabilityStatement/ks-server" ] },
+    { "key": "REQ-2", "label": "Validate", "conformance": [ "SHALL" ], "requirement": "Systems SHALL validate every resource they receive against the profiles in this guide.\n\n*Footnote: where validation is too slow, systems SHALL feel bad about it.*", "conditionality": true },
+    { "key": "REQ-3", "label": "Record the excuse", "conformance": [ "SHALL" ], "requirement": "Where a system does not meet REQ-1 or REQ-2, it SHALL record the reason using the [Excuse extension](StructureDefinition-ext-excuse.html).", "derivedFrom": "REQ-1", "parent": "REQ-1" },
+    { "key": "REQ-4", "label": "Terminology", "conformance": [ "SHOULD" ], "requirement": "Systems SHOULD use the bound value sets. Systems that use a local spreadsheet instead SHOULD at least keep the spreadsheet up to date." }
+  ]
+}

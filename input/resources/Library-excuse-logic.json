@@ -1,0 +1,9 @@
+{
+  "resourceType": "Library",
+  "id": "excuse-logic",
+  "url": "http://example.org/fhir/kitchen-sink/Library/excuse-logic",
+  "name": "ExcuseLogic", "title": "Excuse Logic", "version": "0.2.0", "status": "active", "experimental": true, "date": "2026-11-20", "publisher": "The Committee for Doing It Properly",
+  "description": "Clinical-quality-language logic for deciding which excuse applies, given the date of the next release.",
+  "type": { "coding": [ { "system": "http://terminology.hl7.org/CodeSystem/library-type", "code": "logic-library" } ] },
+  "content": [ { "id": "ig-loader-ExcuseLogic.cql" } ]
+}

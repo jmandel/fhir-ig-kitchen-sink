@@ -1,0 +1,67 @@
+archetype (adl_version=2.1.0; rm_release=1.0.3; generated; uid=0b6a1f6e-6f3c-4c2e-9a7e-4b1d1c2a0001)
+	openEHR-EHR-CLUSTER.excuse.v1.0.0
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	lifecycle_state = <"unmanaged">
+	original_author = <
+		["name"] = <"The Committee for Doing It Properly">
+	>
+	original_namespace = <"org.example">
+	custodian_namespace = <"org.example">
+	custodian_organisation = <"The Committee for Doing It Properly">
+	licence = <"CC0-1.0">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record an excuse offered for a deviation from an interface specification, in a form that can be queried later.">
+			use = <"Use wherever an excuse is offered. Excuses are offered everywhere.">
+			keywords = <"excuse, conformance, roadmap", ...>
+			misuse = <"Not to be used to record the actual reason, which is out of scope.">
+		>
+	>
+
+definition
+	CLUSTER[id1] matches {	-- Excuse
+		items matches {
+			ELEMENT[id2] matches {	-- Excuse text
+				value matches {
+					DV_TEXT[id5] 
+				}
+			}
+			ELEMENT[id3] occurrences matches {0..1} matches {	-- Offered
+				value matches {
+					DV_DATE_TIME[id6] 
+				}
+			}
+			ELEMENT[id4] occurrences matches {0..1} matches {	-- Believed
+				value matches {
+					DV_BOOLEAN[id7] 
+				}
+			}
+		}
+	}
+
+terminology
+	term_definitions = <
+		["en"] = <
+			["id1"] = <
+				text = <"Excuse">
+				description = <"An excuse offered for a deviation from an interface specification.">
+			>
+			["id2"] = <
+				text = <"Excuse text">
+				description = <"The excuse, verbatim.">
+			>
+			["id3"] = <
+				text = <"Offered">
+				description = <"When the excuse was offered.">
+			>
+			["id4"] = <
+				text = <"Believed">
+				description = <"Whether anyone believed it.">
+			>
+		>
+	>

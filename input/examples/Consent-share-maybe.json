@@ -1,0 +1,11 @@
+{
+  "resourceType": "Consent",
+  "id": "share-maybe",
+  "status": "active",
+  "category": [ { "text": "Data sharing (in principle)" } ],
+  "subject": { "reference": "Patient/alice" },
+  "date": "2026-11-20",
+  "controller": [ { "reference": "Organization/nowhere-hie" } ],
+  "decision": "permit",
+  "provision": [ { "period": { "start": "2026-11-20" }, "purpose": [ { "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason", "code": "TREAT" } ] } ]
+}

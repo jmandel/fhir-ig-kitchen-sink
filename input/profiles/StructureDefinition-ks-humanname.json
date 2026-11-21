@@ -1,0 +1,26 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "ks-humanname",
+  "url": "http://example.org/fhir/kitchen-sink/StructureDefinition/ks-humanname",
+  "version": "0.2.0",
+  "name": "KitchenSinkHumanName",
+  "title": "Kitchen Sink Human Name",
+  "status": "active",
+  "experimental": true,
+  "date": "2026-11-20",
+  "publisher": "The Committee for Doing It Properly",
+  "description": "A human name with a family name, because the alternative has been tried.",
+  "fhirVersion": "5.0.0",
+  "kind": "complex-type",
+  "abstract": false,
+  "type": "HumanName",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/HumanName",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      { "id": "HumanName", "path": "HumanName", "short": "A name, structured" },
+      { "id": "HumanName.family", "path": "HumanName.family", "min": 1, "mustSupport": true },
+      { "id": "HumanName.given", "path": "HumanName.given", "mustSupport": true, "comment": "Not to be used for the family name, however tempting." }
+    ]
+  }
+}

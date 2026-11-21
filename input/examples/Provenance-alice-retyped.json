@@ -1,0 +1,10 @@
+{
+  "resourceType": "Provenance",
+  "id": "alice-retyped",
+  "target": [ { "reference": "Patient/alice" } ],
+  "occurredDateTime": "2026-11-19T16:45:00Z",
+  "recorded": "2026-11-19T16:45:03Z",
+  "activity": { "coding": [ { "system": "http://terminology.hl7.org/CodeSystem/v3-DataOperation", "code": "UPDATE" } ], "text": "Reconciled with the retyped fax" },
+  "agent": [ { "who": { "reference": "Device/engine" } }, { "who": { "reference": "Practitioner/analyst" } } ],
+  "entity": [ { "role": "source", "what": { "reference": "Bundle/fax-cover" } } ]
+}

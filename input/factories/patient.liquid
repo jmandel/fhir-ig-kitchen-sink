@@ -1,0 +1,11 @@
+{
+  "resourceType": "Patient",
+  "id": "respondent-{{ id }}",
+  "meta": { "profile": [ "http://example.org/fhir/kitchen-sink/StructureDefinition/ks-minimal-patient" ] },
+  "extension": [ {
+    "url": "http://example.org/fhir/kitchen-sink/StructureDefinition/ext-excuse",
+    "valueCodeableConcept": { "coding": [ { "system": "http://example.org/fhir/excuses", "code": "{{ excuse }}" } ] }
+  } ],
+  "name": [ { "family": "{{ family }}", "given": [ "{{ given }}" ] } ],
+  "gender": "{{ gender }}"
+}

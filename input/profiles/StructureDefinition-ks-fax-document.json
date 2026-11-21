@@ -1,0 +1,26 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "ks-fax-document",
+  "url": "http://example.org/fhir/kitchen-sink/StructureDefinition/ks-fax-document",
+  "version": "0.2.0",
+  "name": "FaxCoverDocument",
+  "title": "Fax Cover Document",
+  "status": "active",
+  "experimental": true,
+  "date": "2026-11-20",
+  "publisher": "The Committee for Doing It Properly",
+  "description": "A FHIR document whose sole purpose is to describe a fax that was sent separately.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Bundle",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Bundle",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      { "id": "Bundle", "path": "Bundle" },
+      { "id": "Bundle.type", "path": "Bundle.type", "patternCode": "document" },
+      { "id": "Bundle.entry", "path": "Bundle.entry", "min": 2 }
+    ]
+  }
+}

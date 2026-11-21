@@ -1,0 +1,32 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "ImplementationReality",
+  "url": "http://example.org/fhir/kitchen-sink/StructureDefinition/ImplementationReality",
+  "version": "0.2.0",
+  "name": "ImplementationReality",
+  "title": "Implementation Reality (logical model)",
+  "status": "active",
+  "experimental": true,
+  "date": "2026-11-20",
+  "publisher": "The Committee for Doing It Properly",
+  "description": "A logical model of what a system actually does, as opposed to what its conformance statement says. Workarounds may contain workarounds, recursively, which is modelled with a content reference.",
+  "fhirVersion": "5.0.0",
+  "kind": "logical",
+  "abstract": false,
+  "type": "http://example.org/fhir/kitchen-sink/StructureDefinition/ImplementationReality",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Base",
+  "derivation": "specialization",
+  "differential": {
+    "element": [
+      { "id": "ImplementationReality", "path": "ImplementationReality", "short": "What a system actually does", "definition": "What a system actually does.", "min": 0, "max": "*" },
+      { "id": "ImplementationReality.system", "path": "ImplementationReality.system", "short": "Name of the system", "definition": "The name by which the system is known in meetings.", "min": 1, "max": "1", "type": [ { "code": "string" } ] },
+      { "id": "ImplementationReality.claimedLevel", "path": "ImplementationReality.claimedLevel", "short": "Claimed maturity level", "definition": "The maturity level stated on the product sheet.", "min": 1, "max": "1", "type": [ { "code": "code" } ], "binding": { "strength": "required", "valueSet": "http://example.org/fhir/kitchen-sink/ValueSet/maturity-levels" } },
+      { "id": "ImplementationReality.observedLevel", "path": "ImplementationReality.observedLevel", "short": "Observed maturity level", "definition": "The maturity level observed during testing.", "min": 0, "max": "1", "type": [ { "code": "code" } ], "binding": { "strength": "required", "valueSet": "http://example.org/fhir/kitchen-sink/ValueSet/maturity-levels" } },
+      { "id": "ImplementationReality.specification", "path": "ImplementationReality.specification", "short": "The specification it claims to implement", "definition": "The interface specification the system claims to implement.", "min": 0, "max": "1", "type": [ { "code": "http://example.org/fhir/kitchen-sink/StructureDefinition/InterfaceSpecification" } ] },
+      { "id": "ImplementationReality.workaround", "path": "ImplementationReality.workaround", "short": "A workaround in place", "definition": "A workaround in place.", "min": 0, "max": "*", "type": [ { "code": "BackboneElement" } ] },
+      { "id": "ImplementationReality.workaround.description", "path": "ImplementationReality.workaround.description", "short": "What it does", "definition": "What the workaround does.", "min": 1, "max": "1", "type": [ { "code": "string" } ] },
+      { "id": "ImplementationReality.workaround.excuse", "path": "ImplementationReality.workaround.excuse", "short": "Why it exists", "definition": "The excuse that justifies the workaround.", "min": 0, "max": "1", "type": [ { "code": "code" } ], "binding": { "strength": "extensible", "valueSet": "http://example.org/fhir/kitchen-sink/ValueSet/excuses" } },
+      { "id": "ImplementationReality.workaround.nested", "path": "ImplementationReality.workaround.nested", "short": "Workarounds for the workaround", "definition": "Workarounds that exist because of this workaround.", "min": 0, "max": "*", "contentReference": "#ImplementationReality.workaround" }
+    ]
+  }
+}

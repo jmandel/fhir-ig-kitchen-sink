@@ -1,0 +1,59 @@
+# CodeSystem.title
+#: CodeSystem.title
+msgid "Excuses for Non-Conformance"
+msgstr "Ausreden für Nichtkonformität"
+
+# CodeSystem.description
+#: CodeSystem.description
+msgid "Reasons offered when a system does not do what the specification says. The full code system is believed to be infinite; this resource is a fragment containing the most frequently observed members."
+msgstr "Gründe, die angeführt werden, wenn ein System nicht tut, was die Spezifikation verlangt. Das vollständige Codesystem gilt als unendlich; diese Ressource ist ein Fragment mit den am häufigsten beobachteten Einträgen."
+
+# CodeSystem.concept.display
+#: CodeSystem.concept.display
+msgid "Planned for next quarter"
+msgstr "Für das nächste Quartal geplant"
+
+# CodeSystem.concept.definition
+#: CodeSystem.concept.definition
+msgid "The feature is on the roadmap, which is a document that moves."
+msgstr "Die Funktion steht auf der Roadmap, einem Dokument, das sich bewegt."
+
+# CodeSystem.concept.display
+#: CodeSystem.concept.display
+msgid "We read it as optional"
+msgstr "Wir haben es als optional gelesen"
+
+# CodeSystem.concept.definition
+#: CodeSystem.concept.definition
+msgid "The SHALL was interpreted in light of the surrounding context, which was a deadline."
+msgstr "Das SHALL wurde im Lichte des Kontexts ausgelegt, und der Kontext war eine Deadline."
+
+# CodeSystem.concept.display
+#: CodeSystem.concept.display
+msgid "No customer has asked for it"
+msgstr "Kein Kunde hat danach gefragt"
+
+# CodeSystem.concept.definition
+#: CodeSystem.concept.definition
+msgid "Customers have asked, but not in the correct ticketing system."
+msgstr "Kunden haben gefragt, aber nicht im richtigen Ticketsystem."
+
+# CodeSystem.concept.display
+#: CodeSystem.concept.display
+msgid "It works on my machine"
+msgstr "Auf meinem Rechner funktioniert es"
+
+# CodeSystem.concept.definition
+#: CodeSystem.concept.definition
+msgid "The machine in question is not available for inspection."
+msgstr "Der betreffende Rechner steht für eine Prüfung nicht zur Verfügung."
+
+# CodeSystem.concept.display
+#: CodeSystem.concept.display
+msgid "The specification is ambiguous"
+msgstr "Die Spezifikation ist mehrdeutig"
+
+# CodeSystem.concept.definition
+#: CodeSystem.concept.definition
+msgid "The specification is ambiguous in a way that happens to match the existing implementation."
+msgstr "Die Spezifikation ist auf eine Weise mehrdeutig, die zufällig zur bestehenden Implementierung passt."

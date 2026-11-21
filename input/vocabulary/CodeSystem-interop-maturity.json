@@ -1,0 +1,266 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "interop-maturity",
+  "url": "http://example.org/fhir/kitchen-sink/CodeSystem/interop-maturity",
+  "version": "0.2.0",
+  "name": "InteroperabilityMaturityLevels",
+  "title": "Interoperability Maturity Levels",
+  "_title": {
+    "extension": [
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/translation",
+        "extension": [
+          {
+            "url": "lang",
+            "valueCode": "de"
+          },
+          {
+            "url": "content",
+            "valueString": "Reifegrade der Interoperabilität"
+          }
+        ]
+      }
+    ]
+  },
+  "status": "active",
+  "experimental": true,
+  "date": "2026-11-20",
+  "publisher": "The Committee for Doing It Properly",
+  "description": "An ordered, hierarchical classification of how health data actually moves between two systems, from the traditional to the aspirational. Levels are cumulative: every system at a higher level retains the ability to fall back to any lower level without notice.",
+  "caseSensitive": true,
+  "hierarchyMeaning": "is-a",
+  "content": "complete",
+  "property": [
+    {
+      "code": "rank",
+      "uri": "http://example.org/fhir/kitchen-sink/CodeSystem/interop-maturity#rank",
+      "description": "Position on the maturity scale (higher is more mature, in theory).",
+      "type": "integer"
+    },
+    {
+      "code": "typical-latency",
+      "uri": "http://example.org/fhir/kitchen-sink/CodeSystem/interop-maturity#typical-latency",
+      "description": "How long the data typically takes to arrive, stated optimistically.",
+      "type": "string"
+    },
+    {
+      "code": "notSelectable",
+      "uri": "http://hl7.org/fhir/concept-properties#notSelectable",
+      "description": "Grouping concepts that nobody admits to using directly.",
+      "type": "boolean"
+    }
+  ],
+  "concept": [
+    {
+      "code": "analog",
+      "display": "Analog exchange",
+      "_display": {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/translation",
+            "extension": [
+              {
+                "url": "lang",
+                "valueCode": "de"
+              },
+              {
+                "url": "content",
+                "valueString": "Analoger Austausch"
+              }
+            ]
+          }
+        ]
+      },
+      "definition": "Data moves by means that involve paper, toner, or a person reading numbers aloud.",
+      "property": [
+        {
+          "code": "rank",
+          "valueInteger": 0
+        },
+        {
+          "code": "notSelectable",
+          "valueBoolean": true
+        }
+      ],
+      "concept": [
+        {
+          "code": "fax-wrong-number",
+          "display": "PDF faxed to the wrong number",
+          "definition": "The document was sent. Where it went is a question for another day.",
+          "designation": [
+            {
+              "language": "de",
+              "value": "PDF an die falsche Nummer gefaxt"
+            }
+          ],
+          "property": [
+            {
+              "code": "rank",
+              "valueInteger": 1
+            },
+            {
+              "code": "typical-latency",
+              "valueString": "indefinite"
+            }
+          ]
+        },
+        {
+          "code": "fax-right-number",
+          "display": "PDF faxed to the right number",
+          "definition": "The document arrived at the intended machine, which is out of paper.",
+          "designation": [
+            {
+              "language": "de",
+              "value": "PDF an die richtige Nummer gefaxt"
+            }
+          ],
+          "property": [
+            {
+              "code": "rank",
+              "valueInteger": 2
+            },
+            {
+              "code": "typical-latency",
+              "valueString": "two business days"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "digital",
+      "display": "Digital exchange",
+      "_display": {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/translation",
+            "extension": [
+              {
+                "url": "lang",
+                "valueCode": "de"
+              },
+              {
+                "url": "content",
+                "valueString": "Digitaler Austausch"
+              }
+            ]
+          }
+        ]
+      },
+      "definition": "Data moves as bits. Whether the bits mean anything is out of scope for this concept.",
+      "property": [
+        {
+          "code": "rank",
+          "valueInteger": 3
+        },
+        {
+          "code": "notSelectable",
+          "valueBoolean": true
+        }
+      ],
+      "concept": [
+        {
+          "code": "csv-email",
+          "display": "CSV attached to an email",
+          "definition": "A spreadsheet export with a column called 'Notes2_final', sent to a shared mailbox.",
+          "designation": [
+            {
+              "language": "de",
+              "value": "CSV als E-Mail-Anhang"
+            }
+          ],
+          "property": [
+            {
+              "code": "rank",
+              "valueInteger": 4
+            },
+            {
+              "code": "typical-latency",
+              "valueString": "whenever someone checks the mailbox"
+            }
+          ]
+        },
+        {
+          "code": "custom-segments",
+          "display": "Messages with locally defined segments",
+          "definition": "A standard message format, extended until it is no longer recognisably standard.",
+          "designation": [
+            {
+              "language": "de",
+              "value": "Nachrichten mit lokal definierten Segmenten"
+            }
+          ],
+          "property": [
+            {
+              "code": "rank",
+              "valueInteger": 5
+            },
+            {
+              "code": "typical-latency",
+              "valueString": "nightly batch"
+            }
+          ]
+        },
+        {
+          "code": "api",
+          "display": "Standards-based API",
+          "definition": "A documented, standards-based interface. Grouping concept for the levels below.",
+          "property": [
+            {
+              "code": "rank",
+              "valueInteger": 6
+            },
+            {
+              "code": "notSelectable",
+              "valueBoolean": true
+            }
+          ],
+          "concept": [
+            {
+              "code": "connectathon-wifi",
+              "display": "Works on the connectathon Wi-Fi",
+              "definition": "Demonstrated end to end, once, between two laptops on the same table.",
+              "designation": [
+                {
+                  "language": "de",
+                  "value": "Funktioniert im Connectathon-WLAN"
+                }
+              ],
+              "property": [
+                {
+                  "code": "rank",
+                  "valueInteger": 7
+                },
+                {
+                  "code": "typical-latency",
+                  "valueString": "real time (demo conditions)"
+                }
+              ]
+            },
+            {
+              "code": "production",
+              "display": "Works in production",
+              "definition": "Reported to exist. Independent confirmation is pending.",
+              "designation": [
+                {
+                  "language": "de",
+                  "value": "Funktioniert im Produktivbetrieb"
+                }
+              ],
+              "property": [
+                {
+                  "code": "rank",
+                  "valueInteger": 8
+                },
+                {
+                  "code": "typical-latency",
+                  "valueString": "real time"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

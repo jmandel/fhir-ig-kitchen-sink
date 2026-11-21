@@ -1,0 +1,29 @@
+{
+  "resourceType": "ValueSet",
+  "id": "excuses",
+  "url": "http://example.org/fhir/kitchen-sink/ValueSet/excuses",
+  "version": "0.2.0",
+  "name": "Excuses",
+  "title": "Accepted Excuses",
+  "status": "active",
+  "experimental": true,
+  "date": "2026-11-20",
+  "publisher": "The Committee for Doing It Properly",
+  "description": "The excuses this guide recognises, with a stored expansion so that nobody has to ask a terminology server how many excuses there are.",
+  "compose": {
+    "include": [ { "system": "http://example.org/fhir/excuses" } ]
+  },
+  "expansion": {
+    "identifier": "urn:uuid:5b1c4a5e-0f0e-4d3c-9a77-2f6b2a3c0001",
+    "timestamp": "2026-11-20T00:00:00Z",
+    "total": 5,
+    "parameter": [ { "name": "used-codesystem", "valueUri": "http://example.org/fhir/excuses|0.2.0" } ],
+    "contains": [
+      { "system": "http://example.org/fhir/excuses", "version": "0.2.0", "code": "next-quarter", "display": "Planned for next quarter" },
+      { "system": "http://example.org/fhir/excuses", "version": "0.2.0", "code": "optional", "display": "We read it as optional" },
+      { "system": "http://example.org/fhir/excuses", "version": "0.2.0", "code": "customer-did-not-ask", "display": "No customer has asked for it" },
+      { "system": "http://example.org/fhir/excuses", "version": "0.2.0", "code": "works-on-my-machine", "display": "It works on my machine" },
+      { "system": "http://example.org/fhir/excuses", "version": "0.2.0", "code": "spec-ambiguous", "display": "The specification is ambiguous" }
+    ]
+  }
+}

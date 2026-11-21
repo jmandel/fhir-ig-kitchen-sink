@@ -1,0 +1,14 @@
+# ActorDefinition.title
+#: ActorDefinition.title
+msgid "The Vendor Who Will Implement It Next Quarter"
+msgstr "Der Hersteller, der es im nächsten Quartal umsetzt"
+
+# ActorDefinition.description
+#: ActorDefinition.description
+msgid "A system supplier fully committed to conformance, on a timeline that is always one quarter away."
+msgstr "Ein Systemlieferant, der sich voll und ganz der Konformität verschrieben hat, mit einem Zeitplan, der stets ein Quartal entfernt ist."
+
+# ActorDefinition.documentation
+#: ActorDefinition.documentation
+msgid "This actor produces data. Its obligations are stated in the profiles; its intentions are stated in the roadmap."
+msgstr "Dieser Akteur erzeugt Daten. Seine Pflichten stehen in den Profilen, seine Absichten in der Roadmap."

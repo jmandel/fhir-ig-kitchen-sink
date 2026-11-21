@@ -1,0 +1,15 @@
+{
+  "resourceType": "CompartmentDefinition",
+  "id": "device",
+  "url": "http://example.org/fhir/kitchen-sink/CompartmentDefinition/device",
+  "name": "IntegrationDeviceCompartment", "title": "Integration Device Compartment", "version": "0.2.0", "status": "active", "experimental": true, "date": "2026-11-20", "publisher": "The Committee for Doing It Properly",
+  "description": "The resources that belong to an integration device, i.e. everything the integration engine has touched, which is everything.",
+  "code": "Device",
+  "search": true,
+  "resource": [
+    { "code": "Device", "param": [ "{def}" ], "documentation": "The device itself." },
+    { "code": "Observation", "param": [ "device" ], "documentation": "Observations the device produced or mangled." },
+    { "code": "Provenance", "param": [ "agent" ], "documentation": "Provenance in which the device appears as an agent." },
+    { "code": "Patient", "documentation": "Patients are not in the device compartment, despite appearances." }
+  ]
+}

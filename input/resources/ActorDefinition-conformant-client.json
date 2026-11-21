@@ -1,0 +1,10 @@
+{
+  "resourceType": "ActorDefinition",
+  "id": "conformant-client",
+  "url": "http://example.org/fhir/kitchen-sink/ActorDefinition/conformant-client",
+  "name": "ConformantClient", "title": "The Hypothetical Conformant Client", "version": "0.2.0", "status": "active", "experimental": true, "date": "2026-11-20", "publisher": "The Committee for Doing It Properly",
+  "description": "A client application that does everything this guide requires. Described here for completeness.",
+  "type": "system",
+  "documentation": "If you have implemented this actor, the committee would like to hear from you.",
+  "derivedFrom": [ "http://example.org/fhir/kitchen-sink/ActorDefinition/vendor-next-quarter" ]
+}

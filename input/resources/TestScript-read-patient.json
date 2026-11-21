@@ -1,0 +1,72 @@
+{
+  "resourceType": "TestScript",
+  "id": "read-patient",
+  "url": "http://example.org/fhir/kitchen-sink/TestScript/read-patient",
+  "name": "ReadPatient",
+  "title": "Read the Kitchen Sink Patient",
+  "version": "0.2.0",
+  "status": "active",
+  "experimental": true,
+  "date": "2026-11-20",
+  "publisher": "The Committee for Doing It Properly",
+  "description": "Reads a patient and checks that the server answers, which is the first and most often failed test.",
+  "fixture": [
+    {
+      "id": "alice",
+      "autocreate": false,
+      "autodelete": false,
+      "resource": {
+        "reference": "Patient/alice"
+      }
+    }
+  ],
+  "profile": [
+    "http://example.org/fhir/kitchen-sink/StructureDefinition/ks-patient"
+  ],
+  "variable": [
+    {
+      "name": "patientId",
+      "sourceId": "alice",
+      "expression": "Patient.id"
+    }
+  ],
+  "test": [
+    {
+      "name": "read",
+      "description": "Read the patient by id.",
+      "action": [
+        {
+          "operation": {
+            "type": {
+              "system": "http://terminology.hl7.org/CodeSystem/testscript-operation-codes",
+              "code": "read"
+            },
+            "resource": "Patient",
+            "description": "Read the patient.",
+            "accept": "json",
+            "encodeRequestUrl": true,
+            "params": "/${patientId}"
+          }
+        },
+        {
+          "assert": {
+            "description": "The server answered with 200.",
+            "direction": "response",
+            "responseCode": "200",
+            "warningOnly": false,
+            "stopTestOnFail": true
+          }
+        },
+        {
+          "assert": {
+            "description": "The response is a Patient.",
+            "direction": "response",
+            "resource": "Patient",
+            "warningOnly": true,
+            "stopTestOnFail": false
+          }
+        }
+      ]
+    }
+  ]
+}

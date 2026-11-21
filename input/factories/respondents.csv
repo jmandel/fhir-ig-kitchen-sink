@@ -1,0 +1,4 @@
+id,family,given,gender,excuse
+r1,Respondent,Avery,female,next-quarter
+r2,Respondent,Blake,male,optional
+r3,Respondent,Cameron,other,spec-ambiguous

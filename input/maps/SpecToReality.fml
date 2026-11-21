@@ -1,0 +1,20 @@
+/// url = "http://example.org/fhir/kitchen-sink/StructureMap/SpecToReality"
+/// name = "SpecToReality"
+/// title = "From Specification to Reality"
+/// status = "draft"
+/// description = "Transforms an interface specification into the implementation that will actually be built."
+
+uses "http://example.org/fhir/kitchen-sink/StructureDefinition/InterfaceSpecification" alias Spec as source
+uses "http://example.org/fhir/kitchen-sink/StructureDefinition/ImplementationReality" alias Reality as target
+
+group SpecToReality(source src : Spec, target tgt : Reality) {
+  src.title as t -> tgt.system = t "system";
+  src -> tgt.claimedLevel = 'production' "claimed";
+  src -> tgt.observedLevel = 'csv-email' "observed";
+  src.statement as s -> tgt.workaround as w then StatementToWorkaround(s, w) "workarounds";
+}
+
+group StatementToWorkaround(source s, target w) {
+  s.text as txt -> w.description = txt "describe";
+  s -> w.excuse = 'next-quarter' "excuse";
+}

@@ -1,0 +1,19 @@
+{
+  "resourceType": "ValueSet",
+  "id": "implemented",
+  "url": "http://example.org/fhir/kitchen-sink/ValueSet/implemented",
+  "version": "0.2.0",
+  "name": "Implemented",
+  "title": "What Was Implemented (value set)",
+  "status": "active",
+  "experimental": true,
+  "date": "2026-11-20",
+  "publisher": "The Committee for Doing It Properly",
+  "description": "All observed behaviours, plus the administrative genders, because every value set eventually acquires something unrelated.",
+  "compose": {
+    "include": [
+      { "system": "http://example.org/fhir/kitchen-sink/CodeSystem/implemented" },
+      { "system": "http://hl7.org/fhir/administrative-gender", "concept": [ { "code": "unknown" } ] }
+    ]
+  }
+}

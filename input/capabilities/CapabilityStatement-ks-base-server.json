@@ -1,0 +1,19 @@
+{
+  "resourceType": "CapabilityStatement",
+  "id": "ks-base-server",
+  "url": "http://example.org/fhir/kitchen-sink/CapabilityStatement/ks-base-server",
+  "name": "BaseServer", "title": "Base Server Capabilities", "version": "0.2.0", "status": "active", "experimental": true, "date": "2026-11-20", "publisher": "The Committee for Doing It Properly",
+  "description": "What every server is expected to do. Imported by more specific capability statements, which then describe what they do instead.",
+  "kind": "requirements",
+  "fhirVersion": "5.0.0",
+  "format": [ "json" ],
+  "rest": [
+    {
+      "mode": "server",
+      "documentation": "Servers SHALL support read. Most do.",
+      "resource": [
+        { "type": "Patient", "profile": "http://example.org/fhir/kitchen-sink/StructureDefinition/ks-minimal-patient", "interaction": [ { "code": "read" } ] }
+      ]
+    }
+  ]
+}

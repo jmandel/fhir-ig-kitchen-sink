@@ -1,0 +1,27 @@
+{
+  "resourceType": "MessageDefinition",
+  "id": "excuse-notification",
+  "url": "http://example.org/fhir/kitchen-sink/MessageDefinition/excuse-notification",
+  "name": "ExcuseNotification",
+  "title": "Excuse Notification",
+  "version": "0.2.0",
+  "status": "active",
+  "experimental": true,
+  "date": "2026-11-20",
+  "publisher": "The Committee for Doing It Properly",
+  "description": "A message announcing that an excuse has been recorded, sent to everyone who did not ask for it.",
+  "eventCoding": {
+    "system": "http://example.org/fhir/kitchen-sink/CodeSystem/assessment-kinds",
+    "code": "excuse-recorded"
+  },
+  "category": "notification",
+  "focus": [
+    {
+      "code": "Patient",
+      "profile": "http://example.org/fhir/kitchen-sink/StructureDefinition/ks-patient",
+      "min": 1,
+      "max": "1"
+    }
+  ],
+  "responseRequired": "never"
+}

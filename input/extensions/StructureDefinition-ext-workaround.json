@@ -1,0 +1,161 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "ext-workaround",
+  "url": "http://example.org/fhir/kitchen-sink/StructureDefinition/ext-workaround",
+  "version": "0.2.0",
+  "name": "WorkaroundExtension",
+  "title": "Workaround",
+  "status": "active",
+  "experimental": true,
+  "date": "2026-11-20",
+  "publisher": "The Committee for Doing It Properly",
+  "description": "A workaround currently in place, its description, and whether anyone still believes it is temporary.",
+  "fhirVersion": "5.0.0",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Patient"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "Workaround in place",
+        "definition": "A workaround currently in place."
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "min": 1
+      },
+      {
+        "id": "Extension.extension:description",
+        "path": "Extension.extension",
+        "sliceName": "description",
+        "min": 1,
+        "max": "1",
+        "short": "What the workaround does"
+      },
+      {
+        "id": "Extension.extension:description.extension",
+        "path": "Extension.extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension:description.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "description"
+      },
+      {
+        "id": "Extension.extension:description.value[x]",
+        "path": "Extension.extension.value[x]",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:temporary",
+        "path": "Extension.extension",
+        "sliceName": "temporary",
+        "min": 0,
+        "max": "1",
+        "short": "Whether the workaround is believed to be temporary"
+      },
+      {
+        "id": "Extension.extension:temporary.extension",
+        "path": "Extension.extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension:temporary.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "temporary"
+      },
+      {
+        "id": "Extension.extension:temporary.value[x]",
+        "path": "Extension.extension.value[x]",
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:since",
+        "path": "Extension.extension",
+        "sliceName": "since",
+        "min": 0,
+        "max": "1",
+        "short": "When the workaround was introduced"
+      },
+      {
+        "id": "Extension.extension:since.extension",
+        "path": "Extension.extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension:since.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "since"
+      },
+      {
+        "id": "Extension.extension:since.value[x]",
+        "path": "Extension.extension.value[x]",
+        "type": [
+          {
+            "code": "date"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:requirement",
+        "path": "Extension.extension",
+        "sliceName": "requirement",
+        "min": 0,
+        "max": "1",
+        "short": "The requirement being worked around"
+      },
+      {
+        "id": "Extension.extension:requirement.extension",
+        "path": "Extension.extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension:requirement.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "requirement"
+      },
+      {
+        "id": "Extension.extension:requirement.value[x]",
+        "path": "Extension.extension.value[x]",
+        "type": [
+          {
+            "code": "canonical",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Requirements"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "http://example.org/fhir/kitchen-sink/StructureDefinition/ext-workaround"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "max": "0"
+      }
+    ]
+  }
+}

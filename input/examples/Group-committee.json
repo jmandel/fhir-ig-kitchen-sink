@@ -1,0 +1,10 @@
+{
+  "resourceType": "Group",
+  "id": "committee",
+  "type": "practitioner",
+  "membership": "enumerated",
+  "name": "The Committee for Doing It Properly",
+  "description": "The group responsible for this guide. Meets weekly; agrees quarterly.",
+  "quantity": 1,
+  "member": [ { "entity": { "reference": "Practitioner/analyst" } } ]
+}

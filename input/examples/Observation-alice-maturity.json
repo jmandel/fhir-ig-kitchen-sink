@@ -1,0 +1,22 @@
+{
+  "resourceType": "Observation",
+  "id": "alice-maturity",
+  "meta": { "profile": [ "http://example.org/fhir/kitchen-sink/StructureDefinition/ks-maturity-observation" ] },
+  "contained": [
+    { "resourceType": "Device", "id": "assessor", "displayName": "Assessment spreadsheet, tab 3", "status": "active" }
+  ],
+  "status": "final",
+  "code": { "coding": [ { "system": "http://example.org/fhir/kitchen-sink/CodeSystem/assessment-kinds", "code": "maturity-assessment", "display": "Interoperability maturity assessment" } ] },
+  "subject": { "reference": "Patient/alice" },
+  "effectiveDateTime": "2026-11-20T09:00:00Z",
+  "performer": [ { "reference": "Practitioner/analyst" } ],
+  "device": { "reference": "#assessor" },
+  "valueCodeableConcept": { "coding": [ { "system": "http://example.org/fhir/kitchen-sink/CodeSystem/interop-maturity", "code": "csv-email", "display": "CSV attached to an email" } ] },
+  "note": [ { "text": "The product sheet claims *Works in production*." } ],
+  "component": [
+    {
+      "code": { "coding": [ { "system": "http://example.org/fhir/kitchen-sink/CodeSystem/assessment-kinds", "code": "excuse", "display": "Excuse offered" } ] },
+      "valueCodeableConcept": { "coding": [ { "system": "http://example.org/fhir/excuses", "code": "customer-did-not-ask", "display": "No customer has asked for it" } ] }
+    }
+  ]
+}

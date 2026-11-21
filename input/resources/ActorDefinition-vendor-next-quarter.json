@@ -1,0 +1,10 @@
+{
+  "resourceType": "ActorDefinition",
+  "id": "vendor-next-quarter",
+  "url": "http://example.org/fhir/kitchen-sink/ActorDefinition/vendor-next-quarter",
+  "name": "VendorNextQuarter", "title": "The Vendor Who Will Implement It Next Quarter", "version": "0.2.0", "status": "active", "experimental": true, "date": "2026-11-20", "publisher": "The Committee for Doing It Properly",
+  "description": "A system supplier fully committed to conformance, on a timeline that is always one quarter away.",
+  "type": "system",
+  "documentation": "This actor produces data. Its obligations are stated in the profiles; its intentions are stated in the roadmap.",
+  "capabilities": "http://example.org/fhir/kitchen-sink/CapabilityStatement/ks-server"
+}

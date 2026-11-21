@@ -1,0 +1,11 @@
+{
+  "resourceType": "Citation",
+  "id": "the-spec",
+  "url": "http://example.org/fhir/kitchen-sink/Citation/the-spec",
+  "name": "TheSpecification", "title": "Citation for the Specification Everyone Refers To", "version": "0.2.0", "status": "active", "experimental": true, "date": "2026-11-20", "publisher": "The Committee for Doing It Properly",
+  "description": "A citation for the specification that is cited in every contract and read in very few.",
+  "citedArtifact": {
+    "title": [ { "text": "The Right Way To Exchange Health Data" } ],
+    "abstract": [ { "text": "Describes the right way to exchange health data. Chapter 1 is widely quoted." } ]
+  }
+}

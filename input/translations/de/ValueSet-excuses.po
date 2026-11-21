@@ -1,0 +1,4 @@
+# ValueSet.title
+#: ValueSet.title
+msgid "Accepted Excuses"
+msgstr "Akzeptierte Ausreden"

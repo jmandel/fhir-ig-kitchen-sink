@@ -1,0 +1,14 @@
+{
+  "resourceType": "ViewDefinition",
+  "name": "patient_excuses",
+  "title": "Patients and their excuses",
+  "status": "active",
+  "resource": "Patient",
+  "select": [
+    { "column": [
+      { "name": "id", "path": "id", "type": "id" },
+      { "name": "family", "path": "name.first().family", "type": "string" },
+      { "name": "excuse", "path": "extension.where(url = 'http://example.org/fhir/kitchen-sink/StructureDefinition/ext-excuse').value.ofType(CodeableConcept).coding.first().code", "type": "code" }
+    ] }
+  ]
+}

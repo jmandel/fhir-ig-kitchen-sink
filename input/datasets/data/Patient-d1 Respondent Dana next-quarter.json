@@ -1,0 +1,3 @@
+{ "resourceType": "Patient", "id": "d1 Respondent Dana next-quarter",
+  "extension": [ { "url": "http://example.org/fhir/kitchen-sink/StructureDefinition/ext-excuse", "valueCodeableConcept": { "coding": [ { "system": "http://example.org/fhir/excuses", "code": "" } ] } } ],
+  "name": [ { "family": "", "given": [ "" ] } ] }

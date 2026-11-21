@@ -1,0 +1,3 @@
+{ "resourceType": "Patient", "id": "d3 Respondent Finley works-on-my-machine",
+  "extension": [ { "url": "http://example.org/fhir/kitchen-sink/StructureDefinition/ext-excuse", "valueCodeableConcept": { "coding": [ { "system": "http://example.org/fhir/excuses", "code": "" } ] } } ],
+  "name": [ { "family": "", "given": [ "" ] } ] }

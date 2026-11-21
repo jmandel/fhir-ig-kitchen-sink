@@ -1,0 +1,22 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "excuses",
+  "url": "http://example.org/fhir/excuses",
+  "version": "0.2.0",
+  "name": "ExcusesForNonConformance",
+  "title": "Excuses for Non-Conformance",
+  "status": "active",
+  "experimental": true,
+  "date": "2026-11-20",
+  "publisher": "The Committee for Doing It Properly",
+  "description": "Reasons offered when a system does not do what the specification says. The full code system is believed to be infinite; this resource is a fragment containing the most frequently observed members.",
+  "caseSensitive": true,
+  "content": "fragment",
+  "concept": [
+    { "code": "next-quarter", "display": "Planned for next quarter", "definition": "The feature is on the roadmap, which is a document that moves." },
+    { "code": "optional", "display": "We read it as optional", "definition": "The SHALL was interpreted in light of the surrounding context, which was a deadline." },
+    { "code": "customer-did-not-ask", "display": "No customer has asked for it", "definition": "Customers have asked, but not in the correct ticketing system." },
+    { "code": "works-on-my-machine", "display": "It works on my machine", "definition": "The machine in question is not available for inspection." },
+    { "code": "spec-ambiguous", "display": "The specification is ambiguous", "definition": "The specification is ambiguous in a way that happens to match the existing implementation." }
+  ]
+}

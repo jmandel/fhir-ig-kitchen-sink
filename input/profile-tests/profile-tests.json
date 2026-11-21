@@ -1,0 +1,11 @@
+{
+  "profiles": [
+    {
+      "url": "http://example.org/fhir/kitchen-sink/StructureDefinition/ks-minimal-patient",
+      "tests": [
+        { "source": "patient-with-name.json", "description": "A patient with a name conforms.", "valid": true },
+        { "source": "patient-without-name.json", "description": "A patient without a name does not conform, however busy everyone was.", "valid": false }
+      ]
+    }
+  ]
+}

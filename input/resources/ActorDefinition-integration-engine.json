@@ -1,0 +1,10 @@
+{
+  "resourceType": "ActorDefinition",
+  "id": "integration-engine",
+  "url": "http://example.org/fhir/kitchen-sink/ActorDefinition/integration-engine",
+  "name": "IntegrationEngine", "title": "The Integration Engine That Fixes Everything", "version": "0.2.0", "status": "active", "experimental": true, "date": "2026-11-20", "publisher": "The Committee for Doing It Properly",
+  "description": "A middleware component that sits between two systems and translates between their interpretations of the same standard.",
+  "type": "system",
+  "documentation": "Configured once, by someone who has since moved on.",
+  "capabilities": "http://example.org/fhir/kitchen-sink/CapabilityStatement/ks-messaging"
+}

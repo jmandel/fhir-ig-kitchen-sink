@@ -1,0 +1,8 @@
+{
+  "resourceType": "Organization",
+  "id": "nowhere-hie",
+  "active": true,
+  "name": "Regional Health Information Exchange of Nowhere",
+  "alias": [ "The Exchange", "The Hub (formerly)" ],
+  "description": "A fictional exchange, connecting fictional systems since some time ago."
+}

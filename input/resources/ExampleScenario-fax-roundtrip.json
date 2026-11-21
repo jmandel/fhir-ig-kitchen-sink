@@ -1,0 +1,30 @@
+{
+  "resourceType": "ExampleScenario",
+  "id": "fax-roundtrip",
+  "url": "http://example.org/fhir/kitchen-sink/ExampleScenario/fax-roundtrip",
+  "name": "FaxRoundtrip", "title": "The Fax Round Trip", "version": "0.2.0", "status": "active", "experimental": true, "date": "2026-11-20", "publisher": "The Committee for Doing It Properly",
+  "purpose": "Illustrates the most common real-world exchange pattern, so that it can be recognised and gently discouraged.",
+  "actor": [
+    { "key": "vendor", "type": "system", "title": "The Vendor Who Will Implement It Next Quarter", "description": "Sends the data, eventually." },
+    { "key": "engine", "type": "system", "title": "The Integration Engine", "description": "Converts the data into a fax, since that is what the receiver accepts." },
+    { "key": "clerk", "type": "person", "title": "The Records Clerk", "description": "Retypes the fax into the receiving system." }
+  ],
+  "instance": [
+    { "key": "patient", "structureType": { "system": "http://hl7.org/fhir/fhir-types", "code": "Patient" }, "title": "Alice, as originally recorded", "description": "A perfectly good FHIR Patient.", "content": { "reference": "Patient/alice" } },
+    { "key": "fax", "structureType": { "system": "http://hl7.org/fhir/fhir-types", "code": "Bundle" }, "title": "The fax cover document", "description": "A document describing the fax.", "content": { "reference": "Bundle/fax-cover" } },
+    { "key": "retyped", "structureType": { "system": "http://hl7.org/fhir/fhir-types", "code": "Patient" }, "title": "Alice, as retyped", "description": "The same patient, with the birth date transposed.", "content": { "reference": "Patient/bob" } }
+  ],
+  "process": [
+    {
+      "title": "Send a patient record",
+      "description": "From structured data, through paper, back to structured data.",
+      "preConditions": "Both systems support the standard.",
+      "postConditions": "Neither system used it.",
+      "step": [
+        { "number": "1", "operation": { "title": "Send patient", "initiator": "vendor", "receiver": "engine", "description": "The vendor sends the patient as FHIR.", "request": { "instanceReference": "patient" } } },
+        { "number": "2", "operation": { "title": "Fax it", "initiator": "engine", "receiver": "clerk", "description": "The engine renders the patient to a fax.", "request": { "instanceReference": "fax" } } },
+        { "number": "3", "operation": { "title": "Retype it", "initiator": "clerk", "receiver": "vendor", "description": "The clerk retypes the fax and sends the result back, for reconciliation.", "request": { "instanceReference": "retyped" } } }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "resourceType": "ValueSet",
+  "id": "maturity-levels",
+  "url": "http://example.org/fhir/kitchen-sink/ValueSet/maturity-levels",
+  "version": "0.2.0",
+  "name": "MaturityLevels",
+  "title": "All Interoperability Maturity Levels",
+  "status": "active",
+  "experimental": true,
+  "date": "2026-11-20",
+  "publisher": "The Committee for Doing It Properly",
+  "description": "Every maturity level, including the ones nobody is proud of.",
+  "compose": {
+    "include": [ { "system": "http://example.org/fhir/kitchen-sink/CodeSystem/interop-maturity" } ]
+  }
+}

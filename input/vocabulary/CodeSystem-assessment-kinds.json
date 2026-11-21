@@ -1,0 +1,29 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "assessment-kinds",
+  "url": "http://example.org/fhir/kitchen-sink/CodeSystem/assessment-kinds",
+  "version": "0.2.0",
+  "name": "AssessmentKinds",
+  "title": "Assessment Kinds",
+  "status": "active",
+  "experimental": true,
+  "date": "2026-11-20",
+  "publisher": "The Committee for Doing It Properly",
+  "description": "Kinds of assessment performed on an integration, usually after it has gone live.",
+  "caseSensitive": true,
+  "content": "complete",
+  "concept": [
+    {
+      "code": "maturity-assessment",
+      "display": "Interoperability maturity assessment"
+    },
+    {
+      "code": "excuse",
+      "display": "Excuse offered"
+    },
+    {
+      "code": "excuse-recorded",
+      "display": "Excuse recorded (message event)"
+    }
+  ]
+}

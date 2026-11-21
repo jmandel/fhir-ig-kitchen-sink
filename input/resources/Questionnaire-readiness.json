@@ -1,0 +1,163 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "readiness",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/variable",
+      "valueExpression": {
+        "name": "hasRead",
+        "language": "text/fhirpath",
+        "expression": "%resource.repeat(item).where(linkId='has-read-spec').answer.value.first()"
+      }
+    }
+  ],
+  "url": "http://example.org/fhir/kitchen-sink/Questionnaire/readiness",
+  "name": "ReadinessToAdopt",
+  "title": "Readiness to Adopt the Standard",
+  "version": "0.2.0",
+  "status": "active",
+  "experimental": true,
+  "date": "2026-11-20",
+  "publisher": "The Committee for Doing It Properly",
+  "description": "A short self-assessment for organisations considering adopting the standard. Honest answers are encouraged and will be held in confidence by the committee, which has seen everything.",
+  "subjectType": [
+    "Patient"
+  ],
+  "item": [
+    {
+      "linkId": "about",
+      "text": "About your system",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "system-name",
+          "text": "What is your system called in meetings?",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "claimed-level",
+          "text": "What maturity level does your product sheet claim?",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
+                "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">What maturity level does your <b>product sheet</b> claim?</div>"
+              },
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/rendering-style",
+                "valueString": "font-weight: normal"
+              }
+            ]
+          },
+          "type": "coding",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/questionnaire-item-control",
+                    "code": "drop-down"
+                  }
+                ]
+              }
+            }
+          ],
+          "answerConstraint": "optionsOnly",
+          "answerValueSet": "http://example.org/fhir/kitchen-sink/ValueSet/maturity-levels"
+        },
+        {
+          "linkId": "has-read-spec",
+          "text": "Have you read the specification?",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "linkId": "which-version",
+          "text": "Which version did you read?",
+          "type": "string",
+          "enableWhen": [
+            {
+              "question": "has-read-spec",
+              "operator": "=",
+              "answerBoolean": true
+            }
+          ]
+        },
+        {
+          "linkId": "excuse",
+          "text": "Please select the reason.",
+          "type": "coding",
+          "answerConstraint": "optionsOnly",
+          "answerValueSet": "http://example.org/fhir/kitchen-sink/ValueSet/excuses",
+          "enableWhen": [
+            {
+              "question": "has-read-spec",
+              "operator": "=",
+              "answerBoolean": false
+            }
+          ]
+        },
+        {
+          "linkId": "go-live",
+          "text": "Planned go-live date",
+          "type": "date",
+          "enableBehavior": "any",
+          "enableWhen": [
+            {
+              "question": "has-read-spec",
+              "operator": "exists",
+              "answerBoolean": true
+            },
+            {
+              "question": "system-name",
+              "operator": "exists",
+              "answerBoolean": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "patient",
+      "text": "A sample patient, to see whether the basics work",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "patient-birthdate",
+          "definition": "http://example.org/fhir/kitchen-sink/StructureDefinition/ks-patient#Patient.birthDate",
+          "text": "Birth date of the sample patient",
+          "type": "date"
+        },
+        {
+          "linkId": "patient-gender",
+          "definition": "http://example.org/fhir/kitchen-sink/StructureDefinition/ks-patient#Patient.gender",
+          "text": "Gender of the sample patient",
+          "type": "coding",
+          "answerValueSet": "http://hl7.org/fhir/ValueSet/administrative-gender"
+        }
+      ]
+    },
+    {
+      "linkId": "readiness-score",
+      "text": "Computed readiness (0 = not ready, 1 = ready)",
+      "type": "decimal",
+      "readOnly": true,
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/cqf-calculatedValue",
+          "valueExpression": {
+            "language": "text/fhirpath",
+            "expression": "iif(%hasRead, 0.5, 0.1)"
+          }
+        }
+      ]
+    },
+    {
+      "linkId": "note",
+      "text": "Thank you. Your answers will be compared with your conformance statement.",
+      "type": "display"
+    }
+  ]
+}

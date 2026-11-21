@@ -1,0 +1,9 @@
+{
+  "title": "Committee roster",
+  "members": [
+    { "role": "Chair", "stance": "Optimistic, procedurally" },
+    { "role": "Vendor representative", "stance": "Supportive, in principle, for next quarter" },
+    { "role": "Implementer", "stance": "Has questions" },
+    { "role": "Terminologist", "stance": "Has a value set for that" }
+  ]
+}

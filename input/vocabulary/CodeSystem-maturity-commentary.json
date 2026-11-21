@@ -1,0 +1,72 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "maturity-commentary",
+  "url": "http://example.org/fhir/kitchen-sink/CodeSystem/maturity-commentary",
+  "version": "0.2.0",
+  "name": "MaturityCommentarySupplement",
+  "title": "Maturity Levels: Editorial Commentary (Supplement)",
+  "status": "active",
+  "experimental": true,
+  "date": "2026-11-20",
+  "publisher": "The Committee for Doing It Properly",
+  "description": "A supplement to the Interoperability Maturity Levels that adds the committee's candid commentary and an additional designation, without changing the codes themselves.",
+  "content": "supplement",
+  "supplements": "http://example.org/fhir/kitchen-sink/CodeSystem/interop-maturity|0.2.0",
+  "property": [
+    {
+      "code": "sigh-factor",
+      "uri": "http://example.org/fhir/kitchen-sink/CodeSystem/maturity-commentary#sigh-factor",
+      "description": "Audible sighs per implementation meeting, averaged over a fiscal year.",
+      "type": "decimal"
+    }
+  ],
+  "concept": [
+    {
+      "code": "fax-wrong-number",
+      "designation": [
+        {
+          "language": "en",
+          "use": {
+            "system": "http://snomed.info/sct",
+            "code": "900000000000013009"
+          },
+          "value": "The classic"
+        }
+      ],
+      "property": [
+        {
+          "code": "sigh-factor",
+          "valueDecimal": 4.5
+        }
+      ]
+    },
+    {
+      "code": "csv-email",
+      "designation": [
+        {
+          "language": "en",
+          "use": {
+            "system": "http://snomed.info/sct",
+            "code": "900000000000013009"
+          },
+          "value": "The spreadsheet era"
+        }
+      ],
+      "property": [
+        {
+          "code": "sigh-factor",
+          "valueDecimal": 3.0
+        }
+      ]
+    },
+    {
+      "code": "connectathon-wifi",
+      "property": [
+        {
+          "code": "sigh-factor",
+          "valueDecimal": 0.5
+        }
+      ]
+    }
+  ]
+}

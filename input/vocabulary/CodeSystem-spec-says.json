@@ -1,0 +1,22 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "spec-says",
+  "url": "http://example.org/fhir/kitchen-sink/CodeSystem/spec-says",
+  "version": "0.2.0",
+  "name": "WhatTheSpecSays",
+  "title": "What the Specification Says",
+  "status": "active",
+  "experimental": true,
+  "date": "2026-11-20",
+  "publisher": "The Committee for Doing It Properly",
+  "description": "Behaviours as written in the normative text.",
+  "caseSensitive": true,
+  "content": "complete",
+  "concept": [
+    { "code": "validate-input", "display": "Validate all input against the profile" },
+    { "code": "return-operationoutcome", "display": "Return an OperationOutcome on error" },
+    { "code": "support-search", "display": "Support the listed search parameters" },
+    { "code": "use-terminology", "display": "Use the bound terminology" },
+    { "code": "honour-version", "display": "Honour the requested FHIR version" }
+  ]
+}

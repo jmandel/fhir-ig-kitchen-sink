@@ -1,0 +1,14 @@
+{
+  "resourceType": "ValueSet",
+  "id": "spec-says",
+  "url": "http://example.org/fhir/kitchen-sink/ValueSet/spec-says",
+  "version": "0.2.0",
+  "name": "SpecSays",
+  "title": "What the Specification Says (value set)",
+  "status": "active",
+  "experimental": true,
+  "date": "2026-11-20",
+  "publisher": "The Committee for Doing It Properly",
+  "description": "All normative behaviours.",
+  "compose": { "include": [ { "system": "http://example.org/fhir/kitchen-sink/CodeSystem/spec-says" } ] }
+}

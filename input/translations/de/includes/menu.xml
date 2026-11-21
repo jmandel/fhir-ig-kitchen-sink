@@ -1,0 +1,9 @@
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li><a href="index.html">Startseite</a></li>
+  <li><a href="background.html">Hintergrund</a></li>
+  <li><a href="guidance.html">Leitfaden</a></li>
+  <li><a href="page-commands.html">Seitenbefehle</a></li>
+  <li><a href="respondents.html">Umfrageteilnehmer</a></li>
+  <li><a href="artifacts.html">Artefakte</a></li>
+  <li><a href="changes.html">Änderungen</a></li>
+</ul>

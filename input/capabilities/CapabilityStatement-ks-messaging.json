@@ -1,0 +1,46 @@
+{
+  "resourceType": "CapabilityStatement",
+  "id": "ks-messaging",
+  "url": "http://example.org/fhir/kitchen-sink/CapabilityStatement/ks-messaging",
+  "name": "KitchenSinkMessaging",
+  "title": "Kitchen Sink Messaging and Documents",
+  "version": "0.2.0",
+  "status": "active",
+  "experimental": true,
+  "date": "2026-11-20",
+  "publisher": "The Committee for Doing It Properly",
+  "description": "Capabilities of a system that exchanges excuse notifications as messages and fax cover sheets as documents.",
+  "kind": "requirements",
+  "fhirVersion": "5.0.0",
+  "format": [
+    "json"
+  ],
+  "messaging": [
+    {
+      "reliableCache": 0,
+      "documentation": "Messages are delivered at least once, and occasionally at least twice.",
+      "supportedMessage": [
+        {
+          "mode": "sender",
+          "definition": "http://example.org/fhir/kitchen-sink/MessageDefinition/excuse-notification"
+        },
+        {
+          "mode": "receiver",
+          "definition": "http://example.org/fhir/kitchen-sink/MessageDefinition/excuse-notification"
+        }
+      ]
+    }
+  ],
+  "document": [
+    {
+      "mode": "producer",
+      "documentation": "Produced whenever a fax is sent.",
+      "profile": "http://example.org/fhir/kitchen-sink/StructureDefinition/ks-fax-document"
+    },
+    {
+      "mode": "consumer",
+      "documentation": "Consumed, then printed.",
+      "profile": "http://example.org/fhir/kitchen-sink/StructureDefinition/ks-fax-document"
+    }
+  ]
+}

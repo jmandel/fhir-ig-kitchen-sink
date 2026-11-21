@@ -1,0 +1,105 @@
+{
+  "resourceType": "ConceptMap",
+  "id": "spec-to-reality",
+  "url": "http://example.org/fhir/kitchen-sink/ConceptMap/spec-to-reality",
+  "version": "0.2.0",
+  "name": "SpecToReality",
+  "title": "From What the Specification Says to What Was Implemented",
+  "status": "active",
+  "experimental": true,
+  "date": "2026-11-20",
+  "publisher": "The Committee for Doing It Properly",
+  "description": "A mapping, compiled from field observation, between normative behaviour and deployed behaviour. Some mappings depend on circumstances, which are recorded as additional attributes.",
+  "additionalAttribute": [
+    {
+      "code": "deadline",
+      "description": "Whether a release deadline was imminent at the time of implementation.",
+      "type": "code"
+    },
+    {
+      "code": "ticket",
+      "description": "The ticket in which the deviation was recorded, if any.",
+      "type": "string"
+    }
+  ],
+  "sourceScopeCanonical": "http://example.org/fhir/kitchen-sink/ValueSet/spec-says",
+  "targetScopeCanonical": "http://example.org/fhir/kitchen-sink/ValueSet/implemented",
+  "group": [
+    {
+      "source": "http://example.org/fhir/kitchen-sink/CodeSystem/spec-says",
+      "target": "http://example.org/fhir/kitchen-sink/CodeSystem/implemented",
+      "element": [
+        {
+          "code": "validate-input",
+          "display": "Validate all input against the profile",
+          "target": [
+            {
+              "code": "validate-sometimes",
+              "display": "Validate input when the validator is not too slow",
+              "relationship": "source-is-broader-than-target",
+              "comment": "Validation was disabled in production 'temporarily'.",
+              "dependsOn": [
+                {
+                  "attribute": "deadline",
+                  "valueCode": "imminent"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "code": "return-operationoutcome",
+          "display": "Return an OperationOutcome on error",
+          "target": [
+            {
+              "code": "http-500",
+              "display": "Return HTTP 500 with an HTML stack trace",
+              "relationship": "not-related-to",
+              "product": [
+                {
+                  "attribute": "ticket",
+                  "valueString": "WONTFIX-1"
+                }
+              ],
+              "comment": "An error page is, technically, a response."
+            }
+          ]
+        },
+        {
+          "code": "support-search",
+          "display": "Support the listed search parameters",
+          "target": [
+            {
+              "code": "search-by-id",
+              "display": "Support search by _id",
+              "relationship": "source-is-broader-than-target",
+              "comment": "The other parameters are on the roadmap."
+            }
+          ]
+        },
+        {
+          "code": "use-terminology",
+          "display": "Use the bound terminology",
+          "target": [
+            {
+              "code": "free-text",
+              "display": "Put the code in the text field",
+              "relationship": "related-to"
+            },
+            {
+              "code": "local-codes",
+              "display": "Use a local code list maintained in a spreadsheet",
+              "relationship": "related-to"
+            }
+          ]
+        }
+      ],
+      "unmapped": {
+        "mode": "fixed",
+        "code": "local-codes",
+        "display": "Use a local code list maintained in a spreadsheet",
+        "relationship": "related-to"
+      }
+    }
+  ]
+}

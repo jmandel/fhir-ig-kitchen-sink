@@ -1,0 +1,73 @@
+{
+  "resourceType": "Patient",
+  "id": "alice",
+  "meta": {
+    "profile": [
+      "http://example.org/fhir/kitchen-sink/StructureDefinition/ks-patient"
+    ]
+  },
+  "extension": [
+    {
+      "url": "http://example.org/fhir/kitchen-sink/StructureDefinition/ext-excuse",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://example.org/fhir/excuses",
+            "code": "next-quarter",
+            "display": "Planned for next quarter"
+          }
+        ]
+      }
+    },
+    {
+      "url": "http://example.org/fhir/kitchen-sink/StructureDefinition/ext-workaround",
+      "extension": [
+        {
+          "url": "description",
+          "valueString": "Middle names are stored in the family name field, separated by a tilde."
+        },
+        {
+          "url": "temporary",
+          "valueBoolean": true
+        },
+        {
+          "url": "since",
+          "valueDate": "2011-04-01"
+        },
+        {
+          "url": "requirement",
+          "valueCanonical": "http://example.org/fhir/kitchen-sink/Requirements/exchange"
+        },
+        {
+          "url": "http://example.org/fhir/kitchen-sink/StructureDefinition/ext-workaround-severity",
+          "valueInteger": 4
+        }
+      ]
+    }
+  ],
+  "identifier": [
+    {
+      "system": "http://example.org/fhir/kitchen-sink/NamingSystem/vendor-ticket",
+      "value": "TCK-1042"
+    },
+    {
+      "system": "urn:oid:2.999.1.2.3.5",
+      "value": "MRN-0001"
+    }
+  ],
+  "active": true,
+  "name": [
+    {
+      "use": "official",
+      "family": "Example",
+      "given": [
+        "Alice"
+      ]
+    }
+  ],
+  "gender": "female",
+  "birthDate": "1970-01-01",
+  "managingOrganization": {
+    "reference": "Organization/nowhere-hie"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "resourceType": "TestPlan",
+  "id": "conformance",
+  "url": "http://example.org/fhir/kitchen-sink/TestPlan/conformance",
+  "name": "ConformanceTestPlan", "title": "Conformance Test Plan", "version": "0.2.0", "status": "active", "experimental": true, "date": "2026-11-20", "publisher": "The Committee for Doing It Properly",
+  "description": "How to test whether a system exchanges health data The Right Way. Execution of this plan is optional, like most test plans.",
+  "category": [ { "coding": [ { "system": "http://hl7.org/fhir/testscript-scope-phase-codes", "code": "integration" } ] } ],
+  "scope": [ { "reference": "Requirements/exchange" } ],
+  "testTools": "Any FHIR validator, a fax machine for regression testing, and patience.",
+  "exitCriteria": "All tests pass, or the release date arrives, whichever is first.",
+  "testCase": [
+    {
+      "sequence": 1,
+      "scope": [ { "reference": "StructureDefinition/ks-patient" } ],
+      "testRun": [ { "narrative": "Read the example patient and validate it against the Kitchen Sink Patient profile.", "script": { "language": { "coding": [ { "system": "urn:ietf:bcp:13", "code": "text/plain" } ] }, "sourceReference": { "reference": "TestScript/read-patient" } } } ],
+      "testData": [ { "type": { "system": "http://hl7.org/fhir/fhir-types", "code": "Patient" }, "content": { "reference": "Patient/alice" } } ],
+      "assertion": [ { "type": [ { "text": "validation" } ], "result": [ { "concept": { "text": "No errors, or errors with documented excuses" } } ] } ]
+    },
+    {
+      "sequence": 2,
+      "scope": [ { "reference": "OperationDefinition/generate-excuse" } ],
+      "dependency": [ { "description": "Requires a patient to have been read successfully.", "predecessor": { "reference": "TestPlan/conformance" } } ],
+      "testRun": [ { "narrative": "Invoke $generate-excuse for REQ-2 and check that the excuse is in the accepted list." } ]
+    }
+  ]
+}

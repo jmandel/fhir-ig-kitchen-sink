@@ -1,0 +1,27 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "ext-excuse",
+  "url": "http://example.org/fhir/kitchen-sink/StructureDefinition/ext-excuse",
+  "version": "0.2.0",
+  "name": "ExcuseExtension",
+  "title": "Excuse",
+  "status": "active",
+  "experimental": true,
+  "date": "2026-11-20",
+  "publisher": "The Committee for Doing It Properly",
+  "description": "The excuse offered for a deviation from the specification. Recorded as a simple coded extension.",
+  "fhirVersion": "5.0.0",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [ { "type": "element", "expression": "Patient" }, { "type": "element", "expression": "Observation" } ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      { "id": "Extension", "path": "Extension", "short": "Excuse offered", "definition": "The excuse offered for a deviation from the specification." },
+      { "id": "Extension.url", "path": "Extension.url", "fixedUri": "http://example.org/fhir/kitchen-sink/StructureDefinition/ext-excuse" },
+      { "id": "Extension.value[x]", "path": "Extension.value[x]", "min": 1, "type": [ { "code": "CodeableConcept" } ], "binding": { "strength": "extensible", "valueSet": "http://example.org/fhir/kitchen-sink/ValueSet/excuses" } }
+    ]
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "resourceType": "Bundle",
+  "id": "collected-evidence",
+  "type": "collection",
+  "timestamp": "2026-11-20T13:00:00Z",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:7c1b2a90-1d1e-4c55-9a1e-000000000020",
+      "resource": {
+        "resourceType": "Bundle",
+        "id": "search-results",
+        "type": "searchset",
+        "total": 1,
+        "link": [
+          {
+            "relation": "self",
+            "url": "http://example.org/fhir/Patient?name=Example"
+          }
+        ],
+        "entry": [
+          {
+            "fullUrl": "http://example.org/fhir/Patient/alice",
+            "resource": {
+              "resourceType": "Patient",
+              "id": "alice",
+              "name": [
+                {
+                  "family": "Example",
+                  "given": [
+                    "Alice"
+                  ]
+                }
+              ]
+            },
+            "search": {
+              "mode": "match"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:7c1b2a90-1d1e-4c55-9a1e-000000000021",
+      "resource": {
+        "resourceType": "OperationOutcome",
+        "id": "search-warning",
+        "issue": [
+          {
+            "severity": "warning",
+            "code": "informational",
+            "diagnostics": "Search parameter 'excuse' ignored; it will be supported next quarter."
+          }
+        ]
+      }
+    }
+  ]
+}

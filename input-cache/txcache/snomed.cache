@@ -1,0 +1,28 @@
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://snomed.info/sct",
+  "code" : "900000000000013009"
+}, "url": "http://hl7.org/fhir/ValueSet/designation-use", "version": "5.0.0", "langs":"en", "useServer":"true", "useClient":"false", "guessSystem":"false", "noAbstract":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "externalSource":"StructureDefinition[http://hl7.org/fhir/StructureDefinition/CodeSystem|5.0.0]", "profile": {
+  "resourceType" : "Parameters",
+  "parameter" : [{
+    "name" : "x-system-cache-id",
+    "valueString" : "dc8fd4bc-091a-424a-8a3b-6198ef146891"
+  },
+  {
+    "name" : "defaultDisplayLanguage",
+    "valueCode" : "en"
+  }]
+}}####
+v: {
+  "display" : "Synonym",
+  "code" : "900000000000013009",
+  "system" : "http://snomed.info/sct",
+  "version" : "http://snomed.info/sct/900000000000207008/version/20260701",
+  "server" : "https://tx.fhir.org/r5",
+  "diagnostics" : "0ms tx-op\n0ms http://hl7.org/fhir/ValueSet/designation-use|5.0.0: Analysing http://hl7.org/fhir/ValueSet/designation-use|5.0.0 for validation purposes\n0ms http://hl7.org/fhir/ValueSet/designation-use|5.0.0: Parameters: disp-lang=en, generate-narrative, default-to-latest\n0ms http://hl7.org/fhir/ValueSet/designation-use|5.0.0: Prepare include[0]: \"(http://snomed.info/sct)(900000000000003001,900000000000013009)\"\n1ms http://hl7.org/fhir/ValueSet/designation-use|5.0.0: CodeSystem found: \"http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20260701\"\n1ms http://hl7.org/fhir/ValueSet/designation-use|5.0.0: Validate \"[http://snomed.info/sct#900000000000013009 (\"undefined\")]\"\n1ms http://hl7.org/fhir/ValueSet/designation-use|5.0.0: Check \"http://snomed.info/sct#900000000000013009\"\n1ms http://hl7.org/fhir/ValueSet/designation-use|5.0.0: CodeSystem found: http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20260701 for http://snomed.info/sct\n1ms http://hl7.org/fhir/ValueSet/designation-use|5.0.0: check code in (http://snomed.info/sct)(900000000000003001,900000000000013009) at Coding\n1ms http://hl7.org/fhir/ValueSet/designation-use|5.0.0: Code \"900000000000013009\" found in http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20260701",
+  "issues" : {
+  "resourceType" : "OperationOutcome"
+}
+
+}
+-------------------------------------------------------------------------------------

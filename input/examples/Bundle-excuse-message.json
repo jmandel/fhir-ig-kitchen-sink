@@ -1,0 +1,78 @@
+{
+  "resourceType": "Bundle",
+  "id": "excuse-message",
+  "identifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:uuid:7c1b2a90-1d1e-4c55-9a1e-000000000010"
+  },
+  "type": "message",
+  "timestamp": "2026-11-20T12:00:00Z",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:7c1b2a90-1d1e-4c55-9a1e-000000000011",
+      "resource": {
+        "resourceType": "MessageHeader",
+        "id": "excuse-header",
+        "eventCoding": {
+          "system": "http://example.org/fhir/kitchen-sink/CodeSystem/assessment-kinds",
+          "code": "excuse-recorded"
+        },
+        "destination": [
+          {
+            "endpointUrl": "https://receiver.example.org/fhir/$process-message",
+            "name": "Everyone who did not ask"
+          }
+        ],
+        "source": {
+          "endpointUrl": "https://vendor.example.org/fhir",
+          "name": "The Vendor"
+        },
+        "focus": [
+          {
+            "reference": "urn:uuid:7c1b2a90-1d1e-4c55-9a1e-000000000012"
+          }
+        ],
+        "definition": "http://example.org/fhir/kitchen-sink/MessageDefinition/excuse-notification"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:7c1b2a90-1d1e-4c55-9a1e-000000000012",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "message-patient",
+        "meta": {
+          "profile": [
+            "http://example.org/fhir/kitchen-sink/StructureDefinition/ks-patient"
+          ]
+        },
+        "extension": [
+          {
+            "url": "http://example.org/fhir/kitchen-sink/StructureDefinition/ext-excuse",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://example.org/fhir/excuses",
+                  "code": "works-on-my-machine"
+                }
+              ]
+            }
+          }
+        ],
+        "identifier": [
+          {
+            "system": "urn:oid:2.999.1.2.3.5",
+            "value": "MRN-0002"
+          }
+        ],
+        "name": [
+          {
+            "family": "Sample",
+            "given": [
+              "Casey"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

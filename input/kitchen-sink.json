@@ -1,0 +1,865 @@
+{
+  "resourceType": "ImplementationGuide",
+  "id": "example.fhir.uv.kitchensink",
+  "url": "http://example.org/fhir/kitchen-sink/ImplementationGuide/example.fhir.uv.kitchensink",
+  "version": "0.2.0",
+  "name": "KitchenSink",
+  "title": "The Right Way To Exchange Health Data: A Kitchen-Sink Implementation Guide",
+  "status": "draft",
+  "experimental": true,
+  "date": "2026-11-20",
+  "publisher": "The Committee for Doing It Properly",
+  "contact": [
+    {
+      "name": "The Committee for Doing It Properly",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://example.org/committee"
+        }
+      ]
+    }
+  ],
+  "description": "A small synthetic implementation guide that exercises as many IG Publisher rendering features as possible, written as an earnest treatise on exchanging health data properly.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "http://unstats.un.org/unsd/methods/m49/m49.htm",
+          "code": "001"
+        }
+      ]
+    }
+  ],
+  "copyright": "Synthetic content, dedicated to the public domain (CC0-1.0).",
+  "packageId": "example.fhir.uv.kitchensink",
+  "license": "CC0-1.0",
+  "fhirVersion": [
+    "5.0.0"
+  ],
+  "dependsOn": [
+    {
+      "id": "openehr",
+      "uri": "http://openehr.org/fhir/ImplementationGuide/openehr.base",
+      "packageId": "openehr.base",
+      "version": "current",
+      "reason": "The openEHR reference model, so that the excuse archetype can be shown as a logical model."
+    }
+  ],
+  "definition": {
+    "resource": [
+      {
+        "reference": {
+          "reference": "CodeSystem/assessment-kinds"
+        },
+        "name": "Assessment Kinds",
+        "description": "Kinds of assessment performed on an integration, usually after it has gone live.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/excuses"
+        },
+        "name": "Excuses for Non-Conformance",
+        "description": "Reasons offered when a system does not do what the specification says.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/implemented"
+        },
+        "name": "What Was Implemented",
+        "description": "Behaviours as observed in the field.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/interop-maturity"
+        },
+        "name": "Interoperability Maturity Levels",
+        "description": "An ordered, hierarchical classification of how health data actually moves between two systems, from the traditional to the aspirational.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/maturity-commentary"
+        },
+        "name": "Maturity Levels: Editorial Commentary (Supplement)",
+        "description": "A supplement to the Interoperability Maturity Levels that adds the committee's candid commentary and an additional designation, without changing the codes themselves.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/spec-says"
+        },
+        "name": "What the Specification Says",
+        "description": "Behaviours as written in the normative text.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ConceptMap/spec-to-reality"
+        },
+        "name": "From What the Specification Says to What Was Implemented",
+        "description": "A mapping, compiled from field observation, between normative behaviour and deployed behaviour.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "NamingSystem/vendor-ticket"
+        },
+        "name": "Vendor Ticket Number",
+        "description": "Identifiers for tickets in which a conformance gap was acknowledged.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/excuses"
+        },
+        "name": "Accepted Excuses",
+        "description": "The excuses this guide recognises, with a stored expansion so that nobody has to ask a terminology server how many excuses there are.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/implemented"
+        },
+        "name": "What Was Implemented (value set)",
+        "description": "All observed behaviours, plus the administrative genders, because every value set eventually acquires something unrelated.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/maturity-levels"
+        },
+        "name": "All Interoperability Maturity Levels",
+        "description": "Every maturity level, including the ones nobody is proud of.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/production-ready"
+        },
+        "name": "Production-Ready Maturity Levels",
+        "description": "Maturity levels that may be described as production-ready in a press release: everything that is a kind of standards-based API, plus anything digital, minus the levels that would require explanation.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/spec-says"
+        },
+        "name": "What the Specification Says (value set)",
+        "description": "All normative behaviours.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ks-fax-document"
+        },
+        "name": "Fax Cover Document",
+        "description": "A FHIR document whose sole purpose is to describe a fax that was sent separately.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ks-humanname"
+        },
+        "name": "Kitchen Sink Human Name",
+        "description": "A human name with a family name, because the alternative has been tried.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ks-maturity-observation"
+        },
+        "name": "Interoperability Maturity Observation",
+        "description": "An observation of the interoperability maturity of a patient's data, as assessed by someone who has read the specification.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ks-minimal-patient"
+        },
+        "name": "Minimal Patient",
+        "description": "The least a Patient can be while still being exchanged.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ks-patient"
+        },
+        "name": "Kitchen Sink Patient",
+        "description": "A Patient as exchanged The Right Way: identified, named, and annotated with the excuse that explains whatever is missing.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ext-workaround-severity"
+        },
+        "name": "Workaround Severity",
+        "description": "How seriously a workaround should be taken.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ext-excuse"
+        },
+        "name": "Excuse",
+        "description": "The excuse offered for a deviation from the specification.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ext-workaround"
+        },
+        "name": "Workaround",
+        "description": "A workaround currently in place, its description, and whether anyone still believes it is temporary.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ImplementationReality"
+        },
+        "name": "Implementation Reality (logical model)",
+        "description": "A logical model of what a system actually does, as opposed to what its conformance statement says.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/InterfaceSpecification"
+        },
+        "name": "Interface Specification (logical model)",
+        "description": "A logical model of an interface specification: a title and a list of conformance statements, each of which somebody once agreed to.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/ks-base-server"
+        },
+        "name": "Base Server Capabilities",
+        "description": "What every server is expected to do.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/ks-messaging"
+        },
+        "name": "Kitchen Sink Messaging and Documents",
+        "description": "Capabilities of a system that exchanges excuse notifications as messages and fax cover sheets as documents.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/ks-server"
+        },
+        "name": "Kitchen Sink Server",
+        "description": "The capabilities a server SHALL have to claim conformance with this guide.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "OperationDefinition/generate-excuse"
+        },
+        "name": "Generate Excuse",
+        "description": "Given a conformance requirement that was not met, returns an excuse from the accepted list.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "SearchParameter/patient-excuse-severity"
+        },
+        "name": "PatientExcuseSeverity",
+        "description": "Search patients by the severity of the excuse recorded for them.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "SearchParameter/patient-excuse"
+        },
+        "name": "PatientExcuse",
+        "description": "Search patients by the excuse recorded for them.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "SearchParameter/patient-severity-excuse"
+        },
+        "name": "PatientSeverityExcuse",
+        "description": "Composite search on excuse and its severity together, for the reports nobody reads.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ActivityDefinition/escalate"
+        },
+        "name": "Escalate a Conformance Gap",
+        "description": "Create a task for the vendor to address a conformance gap, with a due date one quarter in the future.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ActorDefinition/conformant-client"
+        },
+        "name": "The Hypothetical Conformant Client",
+        "description": "A client application that does everything this guide requires.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ActorDefinition/integration-engine"
+        },
+        "name": "The Integration Engine That Fixes Everything",
+        "description": "A middleware component that sits between two systems and translates between their interpretations of the same standard.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ActorDefinition/vendor-next-quarter"
+        },
+        "name": "The Vendor Who Will Implement It Next Quarter",
+        "description": "A system supplier fully committed to conformance, on a timeline that is always one quarter away.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ExampleScenario/fax-roundtrip"
+        },
+        "name": "The Fax Round Trip",
+        "description": ".",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "GraphDefinition/excuse-graph"
+        },
+        "name": "Excuse Graph",
+        "description": "The graph of resources needed to understand why a patient record looks the way it does.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Library/excuse-logic"
+        },
+        "name": "Excuse Logic",
+        "description": "Clinical-quality-language logic for deciding which excuse applies, given the date of the next release.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Measure/adoption"
+        },
+        "name": "Standard Adoption Rate",
+        "description": "The proportion of systems that will implement the standard within one quarter, which by construction is all of them.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "MessageDefinition/excuse-notification"
+        },
+        "name": "Excuse Notification",
+        "description": "A message announcing that an excuse has been recorded, sent to everyone who did not ask for it.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "PlanDefinition/remediation"
+        },
+        "name": "Conformance Remediation Plan",
+        "description": "What to do when a system is found not to conform: escalate, then wait.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Questionnaire/readiness"
+        },
+        "name": "Readiness to Adopt the Standard",
+        "description": "A short self-assessment for organisations considering adopting the standard.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Requirements/exchange"
+        },
+        "name": "Requirements for Exchanging Health Data The Right Way",
+        "description": "The normative requirements of this guide.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Requirements/vendor-commitments"
+        },
+        "name": "Vendor Commitments",
+        "description": "Requirements on the vendor actor, derived from the exchange requirements, restated with the delivery dates the vendor proposed.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "SubscriptionTopic/excuse-recorded"
+        },
+        "name": "Excuse Recorded",
+        "description": "Notifies subscribers whenever a patient record acquires a new excuse.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "TestScript/read-patient"
+        },
+        "name": "Read the Kitchen Sink Patient",
+        "description": "Reads a patient and checks that the server answers, which is the first and most often failed test.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Binary/fax-cover-sheet"
+        },
+        "name": "Binary fax-cover-sheet",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Bundle/alice-history"
+        },
+        "name": "Bundle alice-history",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Bundle/collected-evidence"
+        },
+        "name": "Bundle collected-evidence",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Bundle/excuse-message"
+        },
+        "name": "Bundle excuse-message",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Bundle/fax-cover"
+        },
+        "name": "Bundle fax-cover",
+        "isExample": true,
+        "profile": [
+          "http://example.org/fhir/kitchen-sink/StructureDefinition/ks-fax-document"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Consent/share-maybe"
+        },
+        "name": "Consent share-maybe",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Device/engine"
+        },
+        "name": "Device engine",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Group/committee"
+        },
+        "name": "Group committee",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/alice-maturity"
+        },
+        "name": "Observation alice-maturity",
+        "isExample": true,
+        "profile": [
+          "http://example.org/fhir/kitchen-sink/StructureDefinition/ks-maturity-observation"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "OperationOutcome/not-yet"
+        },
+        "name": "OperationOutcome not-yet",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/nowhere-hie"
+        },
+        "name": "Organization nowhere-hie",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Parameters/excuse-result"
+        },
+        "name": "Parameters excuse-result",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Patient/alice"
+        },
+        "name": "Alice, recorded properly",
+        "isExample": true,
+        "profile": [
+          "http://example.org/fhir/kitchen-sink/StructureDefinition/ks-patient"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Patient/bob"
+        },
+        "name": "Alice, as retyped from a fax",
+        "isExample": true,
+        "profile": [
+          "http://example.org/fhir/kitchen-sink/StructureDefinition/ks-minimal-patient"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Practitioner/analyst"
+        },
+        "name": "Practitioner analyst",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Provenance/alice-retyped"
+        },
+        "name": "Provenance alice-retyped",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "QuestionnaireResponse/readiness-alice"
+        },
+        "name": "QuestionnaireResponse readiness-alice",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Patient/respondent-r1"
+        },
+        "name": "Survey respondent r1 (generated by a test-data factory)",
+        "isExample": true,
+        "profile": [
+          "http://example.org/fhir/kitchen-sink/StructureDefinition/ks-minimal-patient"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Patient/respondent-r2"
+        },
+        "name": "Survey respondent r2 (generated by a test-data factory)",
+        "isExample": true,
+        "profile": [
+          "http://example.org/fhir/kitchen-sink/StructureDefinition/ks-minimal-patient"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Patient/respondent-r3"
+        },
+        "name": "Survey respondent r3 (generated by a test-data factory)",
+        "isExample": true,
+        "profile": [
+          "http://example.org/fhir/kitchen-sink/StructureDefinition/ks-minimal-patient"
+        ]
+      }
+    ],
+    "page": {
+      "sourceUrl": "toc.html",
+      "name": "toc.html",
+      "title": "Table of Contents",
+      "generation": "html",
+      "page": [
+        {
+          "sourceUrl": "index.md",
+          "name": "index.html",
+          "title": "Home",
+          "generation": "markdown"
+        },
+        {
+          "sourceUrl": "background.md",
+          "name": "background.html",
+          "title": "Background",
+          "generation": "markdown"
+        },
+        {
+          "sourceUrl": "guidance.md",
+          "name": "guidance.html",
+          "title": "Guidance",
+          "generation": "markdown"
+        },
+        {
+          "sourceUrl": "page-commands.md",
+          "name": "page-commands.html",
+          "title": "Page Commands",
+          "generation": "markdown"
+        },
+        {
+          "sourceUrl": "respondents.md",
+          "name": "respondents.html",
+          "title": "Survey Respondents",
+          "generation": "markdown",
+          "page": [
+            {
+              "sourceUrl": "respondent.md",
+              "name": "respondent.html",
+              "title": "Survey Respondent",
+              "generation": "markdown"
+            }
+          ]
+        },
+        {
+          "sourceUrl": "changes.md",
+          "name": "changes.html",
+          "title": "Changes",
+          "generation": "markdown"
+        },
+        {
+          "sourceUrl": "translationinfo.md",
+          "name": "translationinfo.html",
+          "title": "About the Translations",
+          "generation": "markdown"
+        }
+      ]
+    },
+    "parameter": [
+      {
+        "code": {
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+          "code": "copyrightyear"
+        },
+        "value": "2026+"
+      },
+      {
+        "code": {
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+          "code": "releaselabel"
+        },
+        "value": "CI Build (perpetually)"
+      },
+      {
+        "code": {
+          "system": "http://hl7.org/fhir/guide-parameter-code",
+          "code": "path-resource"
+        },
+        "value": "input/vocabulary"
+      },
+      {
+        "code": {
+          "system": "http://hl7.org/fhir/guide-parameter-code",
+          "code": "path-resource"
+        },
+        "value": "input/profiles"
+      },
+      {
+        "code": {
+          "system": "http://hl7.org/fhir/guide-parameter-code",
+          "code": "path-resource"
+        },
+        "value": "input/extensions"
+      },
+      {
+        "code": {
+          "system": "http://hl7.org/fhir/guide-parameter-code",
+          "code": "path-resource"
+        },
+        "value": "input/models"
+      },
+      {
+        "code": {
+          "system": "http://hl7.org/fhir/guide-parameter-code",
+          "code": "path-resource"
+        },
+        "value": "input/capabilities"
+      },
+      {
+        "code": {
+          "system": "http://hl7.org/fhir/guide-parameter-code",
+          "code": "path-resource"
+        },
+        "value": "input/operations"
+      },
+      {
+        "code": {
+          "system": "http://hl7.org/fhir/guide-parameter-code",
+          "code": "path-resource"
+        },
+        "value": "input/resources"
+      },
+      {
+        "code": {
+          "system": "http://hl7.org/fhir/guide-parameter-code",
+          "code": "path-resource"
+        },
+        "value": "input/examples"
+      },
+      {
+        "code": {
+          "system": "http://hl7.org/fhir/guide-parameter-code",
+          "code": "path-resource"
+        },
+        "value": "input/maps"
+      },
+      {
+        "code": {
+          "system": "http://hl7.org/fhir/guide-parameter-code",
+          "code": "path-resource"
+        },
+        "value": "input/extra"
+      },
+      {
+        "code": {
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+          "code": "path-binary"
+        },
+        "value": "input/cql"
+      },
+      {
+        "code": {
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+          "code": "path-liquid"
+        },
+        "value": "input/liquid"
+      },
+      {
+        "code": {
+          "system": "http://hl7.org/fhir/guide-parameter-code",
+          "code": "path-resource"
+        },
+        "value": "input/factory-output"
+      },
+      {
+        "code": {
+          "system": "http://hl7.org/fhir/guide-parameter-code",
+          "code": "path-resource"
+        },
+        "value": "input/archetypes"
+      },
+      {
+        "code": {
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+          "code": "test-data-factories"
+        },
+        "value": "input/factories/factories.json"
+      },
+      {
+        "code": {
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+          "code": "dataset"
+        },
+        "value": "input/datasets/respondents.json"
+      },
+      {
+        "code": {
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+          "code": "viewDefinition"
+        },
+        "value": "input/views/patient-excuses.json"
+      },
+      {
+        "code": {
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+          "code": "profile-test-cases"
+        },
+        "value": "input/profile-tests/profile-tests.json"
+      },
+      {
+        "code": {
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+          "code": "generate-uml"
+        },
+        "value": "source"
+      },
+      {
+        "code": {
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+          "code": "i18n-default-lang"
+        },
+        "value": "en"
+      },
+      {
+        "code": {
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+          "code": "i18n-lang"
+        },
+        "value": "de"
+      },
+      {
+        "code": {
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+          "code": "translation-sources"
+        },
+        "value": "input/translations/de"
+      },
+      {
+        "code": {
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+          "code": "codesystem-property"
+        },
+        "value": "typical-latency"
+      },
+      {
+        "code": {
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+          "code": "special-url"
+        },
+        "value": "http://example.org/fhir/excuses"
+      },
+      {
+        "code": {
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+          "code": "pin-canonicals"
+        },
+        "value": "pin-multiples"
+      },
+      {
+        "code": {
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+          "code": "generate-version"
+        },
+        "value": "r4"
+      },
+      {
+        "code": {
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+          "code": "generate-version"
+        },
+        "value": "r3"
+      },
+      {
+        "code": {
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+          "code": "conversion-version"
+        },
+        "value": "R4"
+      },
+      {
+        "code": {
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+          "code": "shownav"
+        },
+        "value": "true"
+      },
+      {
+        "code": {
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+          "code": "openehr"
+        },
+        "value": "true"
+      },
+      {
+        "code": {
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+          "code": "related-ig"
+        },
+        "value": "module:classic=example.fhir.uv.kitchensinkclassic"
+      }
+    ]
+  }
+}

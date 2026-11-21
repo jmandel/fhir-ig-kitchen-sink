@@ -1,0 +1,52 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "ext-workaround-severity",
+  "url": "http://example.org/fhir/kitchen-sink/StructureDefinition/ext-workaround-severity",
+  "version": "0.2.0",
+  "name": "WorkaroundSeverityExtension",
+  "title": "Workaround Severity",
+  "status": "active",
+  "experimental": true,
+  "date": "2026-11-20",
+  "publisher": "The Committee for Doing It Properly",
+  "description": "How seriously a workaround should be taken, on a scale of 1 (cosmetic) to 5 (load-bearing). Used only on the Workaround extension.",
+  "fhirVersion": "5.0.0",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "extension",
+      "expression": "http://example.org/fhir/kitchen-sink/StructureDefinition/ext-workaround"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "Severity of the workaround",
+        "definition": "How seriously the workaround should be taken."
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "http://example.org/fhir/kitchen-sink/StructureDefinition/ext-workaround-severity"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "integer"
+          }
+        ],
+        "minValueInteger": 1,
+        "maxValueInteger": 5
+      }
+    ]
+  }
+}

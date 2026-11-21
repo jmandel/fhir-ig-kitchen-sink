@@ -1,0 +1,5 @@
+{
+  "resourceType": "OperationOutcome",
+  "id": "not-yet",
+  "issue": [ { "severity": "information", "code": "not-supported", "diagnostics": "This interaction will be supported next quarter." } ]
+}

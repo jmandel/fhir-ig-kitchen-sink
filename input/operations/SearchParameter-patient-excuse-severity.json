@@ -1,0 +1,19 @@
+{
+  "resourceType": "SearchParameter",
+  "id": "patient-excuse-severity",
+  "url": "http://example.org/fhir/kitchen-sink/SearchParameter/patient-excuse-severity",
+  "name": "PatientWorkaroundSeverity",
+  "version": "0.2.0",
+  "status": "active",
+  "experimental": true,
+  "date": "2026-11-20",
+  "publisher": "The Committee for Doing It Properly",
+  "description": "Search patients by the severity of their workarounds.",
+  "code": "workaround-severity",
+  "base": [
+    "Patient"
+  ],
+  "type": "number",
+  "expression": "Patient.extension('http://example.org/fhir/kitchen-sink/StructureDefinition/ext-workaround').extension('http://example.org/fhir/kitchen-sink/StructureDefinition/ext-workaround-severity').value",
+  "processingMode": "normal"
+}

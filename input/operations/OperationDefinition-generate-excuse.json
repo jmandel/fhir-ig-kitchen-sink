@@ -1,0 +1,20 @@
+{
+  "resourceType": "OperationDefinition",
+  "id": "generate-excuse",
+  "url": "http://example.org/fhir/kitchen-sink/OperationDefinition/generate-excuse",
+  "name": "GenerateExcuse", "title": "Generate Excuse", "version": "0.2.0", "status": "active", "experimental": true, "date": "2026-11-20", "publisher": "The Committee for Doing It Properly",
+  "kind": "operation",
+  "description": "Given a conformance requirement that was not met, returns an excuse from the accepted list. The operation is idempotent: the same requirement always produces the same excuse.",
+  "affectsState": false,
+  "code": "generate-excuse",
+  "resource": [ "Patient" ],
+  "system": false,
+  "type": true,
+  "instance": true,
+  "parameter": [
+    { "name": "requirement", "use": "in", "min": 1, "max": "1", "documentation": "The key of the requirement that was not met.", "type": "string" },
+    { "name": "deadline", "use": "in", "min": 0, "max": "1", "documentation": "When the next release is due, for calibration.", "type": "date" },
+    { "name": "excuse", "use": "out", "min": 1, "max": "1", "documentation": "The excuse.", "type": "CodeableConcept", "binding": { "strength": "required", "valueSet": "http://example.org/fhir/kitchen-sink/ValueSet/excuses" } },
+    { "name": "plausibility", "use": "out", "min": 0, "max": "1", "documentation": "How plausible the excuse is, from 0 to 1.", "type": "decimal" }
+  ]
+}

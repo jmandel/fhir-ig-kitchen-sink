@@ -1,0 +1,23 @@
+{
+  "resourceType": "QuestionnaireResponse",
+  "id": "readiness-alice",
+  "questionnaire": "http://example.org/fhir/kitchen-sink/Questionnaire/readiness",
+  "status": "completed",
+  "subject": { "reference": "Patient/alice" },
+  "authored": "2026-11-20T10:00:00Z",
+  "author": { "reference": "Practitioner/analyst" },
+  "item": [
+    { "linkId": "about", "text": "About your system", "item": [
+      { "linkId": "system-name", "text": "What is your system called in meetings?", "answer": [ { "valueString": "The Platform" } ] },
+      { "linkId": "claimed-level", "text": "What maturity level does your product sheet claim?", "answer": [ { "valueCoding": { "system": "http://example.org/fhir/kitchen-sink/CodeSystem/interop-maturity", "code": "production", "display": "Works in production" } } ] },
+      { "linkId": "has-read-spec", "text": "Have you read the specification?", "answer": [ { "valueBoolean": false } ] },
+      { "linkId": "excuse", "text": "Please select the reason.", "answer": [ { "valueCoding": { "system": "http://example.org/fhir/excuses", "code": "next-quarter", "display": "Planned for next quarter" } } ] },
+      { "linkId": "go-live", "text": "Planned go-live date", "answer": [ { "valueDate": "2027-03-31" } ] }
+    ] },
+    { "linkId": "patient", "text": "A sample patient, to see whether the basics work", "item": [
+      { "linkId": "patient-birthdate", "text": "Birth date of the sample patient", "answer": [ { "valueDate": "1970-01-01" } ] },
+      { "linkId": "patient-gender", "text": "Gender of the sample patient", "answer": [ { "valueCoding": { "system": "http://hl7.org/fhir/administrative-gender", "code": "female", "display": "Female" } } ] }
+    ] },
+    { "linkId": "readiness-score", "text": "Computed readiness (0 = not ready, 1 = ready)", "answer": [ { "valueDecimal": 0.1 } ] }
+  ]
+}

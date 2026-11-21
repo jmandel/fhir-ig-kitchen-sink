@@ -1,0 +1,15 @@
+{
+  "resourceType": "Patient",
+  "id": "bob",
+  "meta": { "profile": [ "http://example.org/fhir/kitchen-sink/StructureDefinition/ks-minimal-patient" ] },
+  "identifier": [ { "system": "urn:oid:2.999.1.2.3.5", "value": "MRN-0001-RETYPED" } ],
+  "name": [ {
+    "text": "Alice Example (retyped)",
+    "_text": { "extension": [ { "url": "http://hl7.org/fhir/StructureDefinition/rendering-markdown", "valueMarkdown": "**Alice Example** *(retyped from fax)*" } ] },
+    "family": "Exmaple",
+    "given": [ "Alcie" ]
+  } ],
+  "gender": "unknown",
+  "birthDate": "1970-10-01",
+  "link": [ { "other": { "reference": "Patient/alice" }, "type": "seealso" } ]
+}

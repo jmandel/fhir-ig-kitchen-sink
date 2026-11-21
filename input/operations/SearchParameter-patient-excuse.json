@@ -1,0 +1,12 @@
+{
+  "resourceType": "SearchParameter",
+  "id": "patient-excuse",
+  "url": "http://example.org/fhir/kitchen-sink/SearchParameter/patient-excuse",
+  "name": "PatientExcuse", "version": "0.2.0", "status": "active", "experimental": true, "date": "2026-11-20", "publisher": "The Committee for Doing It Properly",
+  "description": "Search patients by the excuse recorded for them.",
+  "code": "excuse",
+  "base": [ "Patient" ],
+  "type": "token",
+  "expression": "Patient.extension('http://example.org/fhir/kitchen-sink/StructureDefinition/ext-excuse').value",
+  "processingMode": "normal"
+}

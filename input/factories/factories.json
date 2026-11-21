@@ -1,0 +1,12 @@
+{
+  "factories": [
+    {
+      "name": "survey-respondents",
+      "mode": "liquid",
+      "liquid": "input/factories/patient.liquid",
+      "data": "input/factories/respondents.csv",
+      "format": "json",
+      "filename": "input/factory-output/Patient-respondent-$id$.json"
+    }
+  ]
+}

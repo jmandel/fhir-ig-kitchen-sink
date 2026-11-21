@@ -1,0 +1,8 @@
+{
+  "resourceType": "Parameters",
+  "id": "excuse-result",
+  "parameter": [
+    { "name": "excuse", "valueCodeableConcept": { "coding": [ { "system": "http://example.org/fhir/excuses", "code": "spec-ambiguous", "display": "The specification is ambiguous" } ] } },
+    { "name": "plausibility", "valueDecimal": 0.4 }
+  ]
+}

@@ -1,0 +1,6 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+  <p><b>{{ Device.displayName }}</b> (status: {{ Device.status }})</p>
+  {% if Device.manufacturer.exists() %}<p>Supplied by {{ Device.manufacturer }}.</p>{% endif %}
+  {% for v in Device.version %}<p>Version {{ v.value }}, which is the current one, give or take a hotfix.</p>{% endfor %}
+  {% for n in Device.note %}<blockquote>{{ n.text }}</blockquote>{% endfor %}
+</div>

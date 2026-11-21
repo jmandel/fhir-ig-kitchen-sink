@@ -1,0 +1,29 @@
+{
+  "resourceType": "SearchParameter",
+  "id": "patient-severity-excuse",
+  "url": "http://example.org/fhir/kitchen-sink/SearchParameter/patient-severity-excuse",
+  "name": "PatientSeverityExcuse",
+  "version": "0.2.0",
+  "status": "active",
+  "experimental": true,
+  "date": "2026-11-20",
+  "publisher": "The Committee for Doing It Properly",
+  "description": "Composite search on excuse and workaround severity together, for the reports nobody reads.",
+  "code": "excuse-and-workaround-severity",
+  "base": [
+    "Patient"
+  ],
+  "type": "composite",
+  "expression": "Patient",
+  "processingMode": "normal",
+  "component": [
+    {
+      "definition": "http://example.org/fhir/kitchen-sink/SearchParameter/patient-excuse",
+      "expression": "extension('http://example.org/fhir/kitchen-sink/StructureDefinition/ext-excuse').value"
+    },
+    {
+      "definition": "http://example.org/fhir/kitchen-sink/SearchParameter/patient-excuse-severity",
+      "expression": "extension('http://example.org/fhir/kitchen-sink/StructureDefinition/ext-workaround').extension('http://example.org/fhir/kitchen-sink/StructureDefinition/ext-workaround-severity').value"
+    }
+  ]
+}

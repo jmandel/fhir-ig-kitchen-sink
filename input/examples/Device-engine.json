@@ -1,0 +1,9 @@
+{
+  "resourceType": "Device",
+  "id": "engine",
+  "displayName": "The Integration Engine That Fixes Everything",
+  "status": "active",
+  "manufacturer": "A Generic Middleware Supplier",
+  "version": [ { "value": "7.3.1-hotfix-final-2" } ],
+  "note": [ { "text": "Configured once. Do not touch." } ]
+}

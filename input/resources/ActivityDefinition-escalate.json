@@ -1,0 +1,11 @@
+{
+  "resourceType": "ActivityDefinition",
+  "id": "escalate",
+  "url": "http://example.org/fhir/kitchen-sink/ActivityDefinition/escalate",
+  "name": "EscalateGap", "title": "Escalate a Conformance Gap", "version": "0.2.0", "status": "active", "experimental": true, "date": "2026-11-20", "publisher": "The Committee for Doing It Properly",
+  "description": "Create a task for the vendor to address a conformance gap, with a due date one quarter in the future.",
+  "kind": "Task",
+  "intent": "proposal",
+  "priority": "routine",
+  "library": [ "http://example.org/fhir/kitchen-sink/Library/excuse-logic" ]
+}

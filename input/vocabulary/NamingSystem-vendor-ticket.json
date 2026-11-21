@@ -1,0 +1,20 @@
+{
+  "resourceType": "NamingSystem",
+  "id": "vendor-ticket",
+  "url": "http://example.org/fhir/kitchen-sink/NamingSystem/vendor-ticket",
+  "version": "0.2.0",
+  "name": "VendorTicketNumber",
+  "title": "Vendor Ticket Number",
+  "status": "active",
+  "kind": "identifier",
+  "experimental": true,
+  "date": "2026-11-20",
+  "publisher": "The Committee for Doing It Properly",
+  "responsible": "Whichever team currently owns the integration",
+  "description": "Identifiers for tickets in which a conformance gap was acknowledged. Ticket numbers are unique within a ticketing system, and the ticketing system is replaced roughly every three years.",
+  "usage": "Use on Patient.identifier to record the ticket that explains why the record looks the way it does.",
+  "uniqueId": [
+    { "type": "uri", "value": "http://example.org/fhir/kitchen-sink/NamingSystem/vendor-ticket", "preferred": true },
+    { "type": "oid", "value": "2.999.1.2.3.4", "preferred": false, "comment": "An OID under the example arc, as is traditional." }
+  ]
+}

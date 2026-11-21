@@ -1,0 +1,7 @@
+{
+  "resourceType": "Practitioner",
+  "id": "analyst",
+  "text": { "status": "generated", "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>The Interface Analyst Who Has Read The Spec. All of it. Including the appendices.</p></div>" },
+  "name": [ { "family": "Analyst", "given": [ "Interface" ], "suffix": [ "Who Has Read The Spec" ] } ],
+  "qualification": [ { "code": { "text": "Has read the specification" } } ]
+}

@@ -1,0 +1,113 @@
+{
+  "registry" : "https://ecosystem.hl7.org/tx-reg",
+  "systems" : [{
+    "system" : "http://loinc.org",
+    "url" : "http://loinc.org",
+    "authoritative" : [],
+    "candidates" : ["http://tx.fhir.org/r5",
+    "http://tx.hl7europe.eu/r5",
+    "https://tx.hl7.cz/r5",
+    "https://tx.healthall.co.kr/fhir/r5"]
+  },
+  {
+    "system" : "http://snomed.info/sct in en",
+    "url" : "http://snomed.info/sct",
+    "language" : "en",
+    "authoritative" : [],
+    "candidates" : ["http://tx.fhir.org/r5",
+    "https://term.tehik.ee/fhir",
+    "https://tx.hl7.cz/r5",
+    "https://tx.healthall.co.kr/fhir/r5"]
+  },
+  {
+    "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+    "url" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+    "authoritative" : [],
+    "candidates" : ["http://tx.fhir.org/r5", "https://tx.healthall.co.kr/fhir/r5"]
+  },
+  {
+    "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm in en",
+    "url" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+    "language" : "en",
+    "authoritative" : [],
+    "candidates" : ["http://tx.fhir.org/r5", "https://tx.healthall.co.kr/fhir/r5"]
+  },
+  {
+    "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm in en-US",
+    "url" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+    "language" : "en-US",
+    "authoritative" : [],
+    "candidates" : ["http://tx.fhir.org/r5", "https://tx.healthall.co.kr/fhir/r5"]
+  },
+  {
+    "system" : "urn:ietf:bcp:13 in de",
+    "url" : "urn:ietf:bcp:13",
+    "language" : "de",
+    "authoritative" : [],
+    "candidates" : ["http://tx.fhir.org/r5",
+    "http://tx.hl7europe.eu/r5",
+    "https://tx.hl7.cz/r5",
+    "https://tx.healthall.co.kr/fhir/r5"]
+  },
+  {
+    "system" : "urn:ietf:bcp:13 in en",
+    "url" : "urn:ietf:bcp:13",
+    "language" : "en",
+    "authoritative" : [],
+    "candidates" : ["http://tx.fhir.org/r5",
+    "http://tx.hl7europe.eu/r5",
+    "https://tx.hl7.cz/r5",
+    "https://tx.healthall.co.kr/fhir/r5"]
+  },
+  {
+    "system" : "urn:ietf:bcp:47 in en",
+    "url" : "urn:ietf:bcp:47",
+    "language" : "en",
+    "authoritative" : [],
+    "candidates" : ["http://tx.fhir.org/r5",
+    "http://tx.hl7europe.eu/r5",
+    "https://term.tehik.ee/fhir",
+    "https://tx.hl7.cz/r5",
+    "https://tx.healthall.co.kr/fhir/r5"]
+  },
+  {
+    "system" : "urn:iso:std:iso:3166 in en",
+    "url" : "urn:iso:std:iso:3166",
+    "language" : "en",
+    "authoritative" : [],
+    "candidates" : ["http://tx.fhir.org/r5",
+    "http://tx.hl7europe.eu/r5",
+    "https://tx.hl7.cz/r5",
+    "https://tx.healthall.co.kr/fhir/r5"]
+  },
+  {
+    "system" : "urn:iso:std:iso:3166 in en-US",
+    "url" : "urn:iso:std:iso:3166",
+    "language" : "en-US",
+    "authoritative" : [],
+    "candidates" : ["http://tx.fhir.org/r5",
+    "http://tx.hl7europe.eu/r5",
+    "https://tx.hl7.cz/r5",
+    "https://tx.healthall.co.kr/fhir/r5"]
+  },
+  {
+    "system" : "urn:iso:std:iso:3166:-2 in en",
+    "url" : "urn:iso:std:iso:3166:-2",
+    "language" : "en",
+    "authoritative" : [],
+    "candidates" : ["http://tx.fhir.org/r5",
+    "http://tx.hl7europe.eu/r5",
+    "https://tx.hl7.cz/r5",
+    "https://tx.healthall.co.kr/fhir/r5"]
+  },
+  {
+    "system" : "urn:iso:std:iso:3166:-2 in en-US",
+    "url" : "urn:iso:std:iso:3166:-2",
+    "language" : "en-US",
+    "authoritative" : [],
+    "candidates" : ["http://tx.fhir.org/r5",
+    "http://tx.hl7europe.eu/r5",
+    "https://tx.hl7.cz/r5",
+    "https://tx.healthall.co.kr/fhir/r5"]
+  }]
+}

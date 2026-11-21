@@ -1,0 +1,22 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "implemented",
+  "url": "http://example.org/fhir/kitchen-sink/CodeSystem/implemented",
+  "version": "0.2.0",
+  "name": "WhatWasImplemented",
+  "title": "What Was Implemented",
+  "status": "active",
+  "experimental": true,
+  "date": "2026-11-20",
+  "publisher": "The Committee for Doing It Properly",
+  "description": "Behaviours as observed in the field.",
+  "caseSensitive": true,
+  "content": "complete",
+  "concept": [
+    { "code": "validate-sometimes", "display": "Validate input when the validator is not too slow" },
+    { "code": "http-500", "display": "Return HTTP 500 with an HTML stack trace" },
+    { "code": "search-by-id", "display": "Support search by _id" },
+    { "code": "free-text", "display": "Put the code in the text field" },
+    { "code": "local-codes", "display": "Use a local code list maintained in a spreadsheet" }
+  ]
+}

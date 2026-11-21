@@ -1,0 +1,19 @@
+{
+  "resourceType": "SubscriptionTopic",
+  "id": "excuse-recorded",
+  "url": "http://example.org/fhir/kitchen-sink/SubscriptionTopic/excuse-recorded",
+  "name": "ExcuseRecorded", "title": "Excuse Recorded", "version": "0.2.0", "status": "active", "experimental": true, "date": "2026-11-20", "publisher": "The Committee for Doing It Properly",
+  "description": "Notifies subscribers whenever a patient record acquires a new excuse. Popular with auditors.",
+  "resourceTrigger": [
+    {
+      "description": "A Patient is created or updated with an excuse.",
+      "resource": "http://hl7.org/fhir/StructureDefinition/Patient",
+      "supportedInteraction": [ "create", "update" ],
+      "fhirPathCriteria": "%current.extension('http://example.org/fhir/kitchen-sink/StructureDefinition/ext-excuse').exists()"
+    }
+  ],
+  "canFilterBy": [
+    { "description": "Filter by excuse code.", "resource": "Patient", "filterParameter": "excuse" }
+  ],
+  "notificationShape": [ { "resource": "Patient", "include": [ "Patient:organization" ] } ]
+}
