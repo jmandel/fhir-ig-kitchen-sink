@@ -1,0 +1,125 @@
+{
+  "resourceType": "ImplementationGuide",
+  "id": "example.fhir.uv.kitchensinkclassic",
+  "url": "http://example.org/fhir/kitchen-sink-classic/ImplementationGuide/example.fhir.uv.kitchensinkclassic",
+  "version": "0.2.0",
+  "name": "KitchenSinkClassic",
+  "title": "The Right Way To Exchange Health Data, Classic Edition (R4 companion)",
+  "status": "draft",
+  "experimental": true,
+  "date": "2026-11-20",
+  "publisher": "The Committee for Doing It Properly",
+  "description": "The R4 companion of the kitchen-sink implementation guide.",
+  "packageId": "example.fhir.uv.kitchensinkclassic",
+  "license": "CC0-1.0",
+  "fhirVersion": [
+    "4.0.1"
+  ],
+  "definition": {
+    "resource": [
+      {
+        "reference": {
+          "reference": "ActorDefinition/legacy-system"
+        },
+        "name": "The Legacy System Nobody Is Allowed To Touch",
+        "description": "A system that predates the standard and will outlive it.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/legacy-levels"
+        },
+        "name": "Legacy Conformance Levels",
+        "description": "How a legacy system describes its own conformance.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/legacy-observation"
+        },
+        "name": "Legacy Conformance Observation",
+        "description": "An observation recording a legacy system's conformance level, with an additional binding for the honest subset.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/legacy-patient"
+        },
+        "name": "Legacy Patient",
+        "description": "A Patient as a legacy system sends it, with obligations on the legacy system and an additional binding for its self-declared conformance level.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/legacy-levels-honest"
+        },
+        "name": "Legacy Conformance Levels (honest subset)",
+        "description": "The legacy conformance levels that survive scrutiny.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/legacy-levels"
+        },
+        "name": "Legacy Conformance Levels (all)",
+        "description": "All legacy conformance levels.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Observation/carol-first"
+        },
+        "name": "Observation carol-first",
+        "exampleCanonical": "http://example.org/fhir/kitchen-sink-classic/StructureDefinition/legacy-observation"
+      },
+      {
+        "reference": {
+          "reference": "Observation/carol-recheck"
+        },
+        "name": "Observation carol-recheck",
+        "exampleCanonical": "http://example.org/fhir/kitchen-sink-classic/StructureDefinition/legacy-observation"
+      },
+      {
+        "reference": {
+          "reference": "Patient/carol"
+        },
+        "name": "Patient carol",
+        "exampleCanonical": "http://example.org/fhir/kitchen-sink-classic/StructureDefinition/legacy-patient"
+      }
+    ],
+    "page": {
+      "nameUrl": "toc.html",
+      "title": "Table of Contents",
+      "generation": "html",
+      "page": [
+        {
+          "nameUrl": "index.html",
+          "title": "Home",
+          "generation": "markdown"
+        }
+      ]
+    },
+    "parameter": [
+      {
+        "code": "copyrightyear",
+        "value": "2026+"
+      },
+      {
+        "code": "releaselabel",
+        "value": "CI Build (perpetually)"
+      },
+      {
+        "code": "path-resource",
+        "value": "input/resources"
+      },
+      {
+        "code": "path-resource",
+        "value": "input/examples"
+      },
+      {
+        "code": "shownav",
+        "value": "true"
+      }
+    ]
+  }
+}

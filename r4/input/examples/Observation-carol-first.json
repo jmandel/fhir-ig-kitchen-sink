@@ -1,0 +1,3 @@
+{ "resourceType": "Observation", "id": "carol-first", "meta": { "profile": [ "http://example.org/fhir/kitchen-sink-classic/StructureDefinition/legacy-observation" ] }, "status": "final",
+  "code": { "text": "Self-declared conformance level" }, "subject": { "reference": "Patient/carol" }, "effectiveDateTime": "2009-06-01",
+  "valueCodeableConcept": { "coding": [ { "system": "http://example.org/fhir/kitchen-sink-classic/CodeSystem/legacy-levels", "code": "certified" } ] } }

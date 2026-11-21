@@ -1,0 +1,2 @@
+{ "resourceType": "ValueSet", "id": "legacy-levels", "url": "http://example.org/fhir/kitchen-sink-classic/ValueSet/legacy-levels", "name": "LegacyLevels", "title": "Legacy Conformance Levels (all)", "version": "0.2.0", "status": "active", "experimental": true, "date": "2026-11-20", "publisher": "The Committee for Doing It Properly",
+  "description": "All legacy conformance levels.", "compose": { "include": [ { "system": "http://example.org/fhir/kitchen-sink-classic/CodeSystem/legacy-levels" } ] } }

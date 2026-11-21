@@ -1,0 +1,3 @@
+{ "resourceType": "ActorDefinition", "id": "legacy-system", "url": "http://example.org/fhir/kitchen-sink-classic/ActorDefinition/legacy-system", "name": "LegacySystem", "title": "The Legacy System Nobody Is Allowed To Touch", "version": "0.2.0", "status": "active", "experimental": true, "date": "2026-11-20", "publisher": "The Committee for Doing It Properly",
+  "description": "A system that predates the standard and will outlive it.", "type": "system",
+  "documentation": "Represented in this R4 guide with cross-version extensions, as ActorDefinition is an R5 resource." }

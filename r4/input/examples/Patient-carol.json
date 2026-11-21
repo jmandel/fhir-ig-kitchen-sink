@@ -1,0 +1,2 @@
+{ "resourceType": "Patient", "id": "carol", "meta": { "profile": [ "http://example.org/fhir/kitchen-sink-classic/StructureDefinition/legacy-patient" ] },
+  "identifier": [ { "system": "urn:oid:2.999.1.2.3.6", "value": "LEG-0001" } ], "name": [ { "family": "Legacy", "given": [ "Carol" ] } ], "gender": "female" }

@@ -1,0 +1,14 @@
+{
+  "resourceType": "StructureDefinition", "id": "legacy-observation", "url": "http://example.org/fhir/kitchen-sink-classic/StructureDefinition/legacy-observation",
+  "name": "LegacyObservation", "title": "Legacy Conformance Observation", "version": "0.2.0", "status": "active", "experimental": true, "date": "2026-11-20", "publisher": "The Committee for Doing It Properly",
+  "description": "An observation recording a legacy system's conformance level, with an additional binding for the honest subset.",
+  "fhirVersion": "4.0.1", "kind": "resource", "abstract": false, "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation", "derivation": "constraint",
+  "differential": { "element": [
+    { "id": "Observation", "path": "Observation" },
+    { "id": "Observation.value[x]", "path": "Observation.value[x]", "type": [ { "code": "CodeableConcept" } ],
+      "binding": {
+        "extension": [ { "url": "http://hl7.org/fhir/tools/StructureDefinition/additional-binding", "extension": [ { "url": "purpose", "valueCode": "candidate" }, { "url": "valueSet", "valueCanonical": "http://example.org/fhir/kitchen-sink-classic/ValueSet/legacy-levels-honest" }, { "url": "documentation", "valueMarkdown": "The levels a future audit is expected to accept." } ] } ],
+        "strength": "required", "valueSet": "http://example.org/fhir/kitchen-sink-classic/ValueSet/legacy-levels" } }
+  ] }
+}

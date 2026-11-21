@@ -1,0 +1,26 @@
+-------------------------------------------------------------------------------------
+{"code" : {
+  "code" : "en"
+}, "url": "http://hl7.org/fhir/ValueSet/languages", "version": "4.0.1", "langs":"en", "useServer":"true", "useClient":"true", "guessSystem":"true", "noAbstract":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "parameter" : [{
+    "name" : "x-system-cache-id",
+    "valueString" : "dc8fd4bc-091a-424a-8a3b-6198ef146891"
+  },
+  {
+    "name" : "defaultDisplayLanguage",
+    "valueCode" : "en"
+  }]
+}}####
+v: {
+  "display" : "English",
+  "code" : "en",
+  "system" : "urn:ietf:bcp:47",
+  "server" : "https://tx.fhir.org/r4",
+  "diagnostics" : "0ms tx-op\n1ms http://hl7.org/fhir/ValueSet/languages|4.0.1: Analysing http://hl7.org/fhir/ValueSet/languages|4.0.1 for validation purposes\n1ms http://hl7.org/fhir/ValueSet/languages|4.0.1: Parameters: disp-lang=en, generate-narrative, default-to-latest\n1ms http://hl7.org/fhir/ValueSet/languages|4.0.1: Prepare include[0]: \"(urn:ietf:bcp:47)(ar,bn,cs,da,de,de-AT,de-CH,de-DE,el,en,en-AU,en-CA,en-GB,en-IN,en-NZ,en-SG,en-US,es,es-AR,es-ES,... +36 more (56 codes))\"\n1ms http://hl7.org/fhir/ValueSet/languages|4.0.1: CodeSystem found: \"urn:ietf:bcp:47|null\"\n1ms http://hl7.org/fhir/ValueSet/languages|4.0.1: Validate \"[undefined#en (\"undefined\")]\" and infer system\n1ms http://hl7.org/fhir/ValueSet/languages|4.0.1: Check \"undefined#en\"\n1ms http://hl7.org/fhir/ValueSet/languages|4.0.1: check code in (urn:ietf:bcp:47)(ar,bn,cs,da,de,de-AT,de-CH,de-DE,el,en,en-AU,en-CA,en-GB,en-IN,en-NZ,en-SG,en-US,es,es-AR,es-ES,... +36 more (56 codes)) at \n1ms http://hl7.org/fhir/ValueSet/languages|4.0.1: Code \"en\" found in urn:ietf:bcp:47|null\n1ms http://hl7.org/fhir/ValueSet/languages|4.0.1: Inferred CodeSystem = \"urn:ietf:bcp:47\"\n1ms http://hl7.org/fhir/ValueSet/languages|4.0.1: CodeSystem found: urn:ietf:bcp:47|null for urn:ietf:bcp:47\n1ms http://hl7.org/fhir/ValueSet/languages|4.0.1: check code in (urn:ietf:bcp:47)(ar,bn,cs,da,de,de-AT,de-CH,de-DE,el,en,en-AU,en-CA,en-GB,en-IN,en-NZ,en-SG,en-US,es,es-AR,es-ES,... +36 more (56 codes)) at \n1ms http://hl7.org/fhir/ValueSet/languages|4.0.1: Code \"en\" found in urn:ietf:bcp:47|null",
+  "issues" : {
+  "resourceType" : "OperationOutcome"
+}
+
+}
+-------------------------------------------------------------------------------------

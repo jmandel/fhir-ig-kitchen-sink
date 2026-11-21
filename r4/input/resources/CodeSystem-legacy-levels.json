@@ -1,0 +1,3 @@
+{ "resourceType": "CodeSystem", "id": "legacy-levels", "url": "http://example.org/fhir/kitchen-sink-classic/CodeSystem/legacy-levels", "name": "LegacyLevels", "title": "Legacy Conformance Levels", "version": "0.2.0", "status": "active", "experimental": true, "date": "2026-11-20", "publisher": "The Committee for Doing It Properly",
+  "description": "How a legacy system describes its own conformance.", "caseSensitive": true, "content": "complete",
+  "concept": [ { "code": "compliant", "display": "Compliant (self-assessed)" }, { "code": "compatible", "display": "Compatible (with itself)" }, { "code": "certified", "display": "Certified (in 2009)" } ] }
